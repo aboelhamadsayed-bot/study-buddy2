@@ -1,0 +1,1113 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102b4a">
+<link rel="manifest" href="manifest.json">
+<title>قِمّة | منصة التعليم الذكية</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+:root{--navy:#102b4a;--navy2:#173d63;--blue:#2468ed;--blue2:#1455d9;--ink:#172c49;--muted:#74839b;--bg:#eef4fb;--line:#e3eaf4;--white:#fff;--green:#21b99a;--shadow:0 10px 30px #183b6410}
+[data-theme='dark']{--navy:#091a2e;--navy2:#0f2742;--blue:#3b82f6;--blue2:#2563eb;--ink:#e6f0fa;--muted:#94a3b8;--bg:#07121e;--line:#172d47;--white:#0d2238;--green:#10b981;--shadow:0 10px 30px rgba(0,0,0,0.5)}
+[data-theme='dark'] body{background:var(--bg);color:var(--ink)}
+[data-theme='dark'] .panel,[data-theme='dark'] .stat,[data-theme='dark'] .feature,[data-theme='dark'] .challenge-card,[data-theme='dark'] .course,[data-theme='dark'] .task,[data-theme='dark'] .chatbox,[data-theme='dark'] .auth-form-panel{background:#0d2238;border-color:#173352;color:var(--ink)}
+[data-theme='dark'] .topbar .icon-btn{background:#0d2238;border-color:#173352;color:var(--ink)}
+[data-theme='dark'] .field input,[data-theme='dark'] .field select,[data-theme='dark'] .field textarea,[data-theme='dark'] .chat-form input,[data-theme='dark'] #newTaskInput{background:#081625;border-color:#1a395b;color:#e6f0fa}
+[data-theme='dark'] .bubble{background:#132a45;color:#e6f0fa}
+[data-theme='dark'] .bubble.me{background:var(--blue);color:#ffffff}
+[data-theme='dark'] .chat-head{background:#09192b;border-color:#173352}
+[data-theme='dark'] .chat-form{background:#071524;border-color:#173352}
+[data-theme='dark'] .suggestions button,[data-theme='dark'] .filters button{background:#0c1e33;border-color:#183759;color:#a5b8ce}
+[data-theme='dark'] .filters button.active{background:var(--blue);color:#fff}
+[data-theme='dark'] .stat-icon,[data-theme='dark'] .course-icon,[data-theme='dark'] .challenge-icon,[data-theme='dark'] .feature .big{background:#112d4a}
+[data-theme='dark'] .secondary{background:#122b47;color:#60a5fa;border-color:#1d4066}
+[data-theme='dark'] .guest-btn{background:#0d233c;color:#60a5fa;border-color:#3b82f6}
+[data-theme='dark'] .guest-btn:hover{background:#133357}
+[data-theme='dark'] .qimma-quiz-panel{background:#0d2238!important;color:#e6f0fa!important}
+[data-theme='dark'] .qimma-question{border-color:#1d3e62!important}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);font-family:'Cairo',Tahoma,sans-serif;color:var(--ink);min-height:100vh}button,input,textarea,select{font:inherit}button{cursor:pointer}.shell{display:grid;grid-template-columns:230px minmax(0,1fr);min-height:100vh}.sidebar{background:linear-gradient(180deg,#102b4a,#0a2039);color:#fff;padding:22px 15px;display:flex;flex-direction:column;gap:20px;position:sticky;top:0;height:100vh}.brand{font-size:25px;font-weight:900;display:flex;align-items:center;justify-content:center;gap:8px}.mountain{font-size:27px}.profile{text-align:center;padding:16px 8px;border-radius:18px;background:#ffffff0b;border:1px solid #ffffff12}.avatar{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;margin:0 auto 8px;background:linear-gradient(145deg,#d9e9ff,#fff);font-size:34px;border:3px solid #ffffff50}.profile strong{display:block;font-size:14px}.profile small{display:block;color:#b7c7da;font-size:11px}.tag{display:inline-block;background:#2368ed;color:#fff;border-radius:20px;padding:3px 15px;font-size:11px;margin-top:7px}.nav{display:grid;gap:5px}.nav button{border:0;background:transparent;color:#c9d7e8;text-align:right;padding:11px 12px;border-radius:11px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:13px}.nav button:hover,.nav button.active{background:#2468ed;color:white}.nav .ico{width:23px;text-align:center;font-size:17px}.logout{margin-top:auto;border:1px solid #ffffff25;background:#ffffff0a;color:#e1ebf7;padding:11px;border-radius:12px}.main{min-width:0;padding:24px 28px 30px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:22px}.welcome h1{font-size:25px;margin:0 0 3px}.welcome p{color:var(--muted);margin:0;font-size:13px}.top-actions{display:flex;gap:9px;align-items:center}.icon-btn{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;color:var(--ink)}.primary,.secondary{border:0;border-radius:11px;padding:11px 17px;font-weight:800}.primary{background:var(--blue);color:white;box-shadow:0 5px 12px #2468ed25}.primary:hover{background:var(--blue2)}.secondary{background:#edf4ff;color:var(--blue)}.view{display:none}.view.active{display:block;animation:appear .2s ease}@keyframes appear{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}.hero{border-radius:22px;overflow:hidden;padding:32px;min-height:220px;color:white;background:linear-gradient(100deg,#0b2746eF,#0d2e50b5),radial-gradient(ellipse at 85% 20%,#507ba6,transparent 42%),linear-gradient(135deg,#193b5b,#081b31);position:relative;display:flex;align-items:center}.hero:after{content:'🏔️';position:absolute;font-size:120px;left:7%;bottom:-24px;opacity:.25}.hero-content{position:relative;z-index:1;max-width:570px}.eyebrow{color:#a8c9ff;font-size:13px;font-weight:800}.hero h2{font-size:36px;line-height:1.4;margin:7px 0}.hero p{color:#d6e4f4;line-height:1.9;font-size:14px;max-width:510px}.hero .primary{margin-left:7px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0}.stat,.panel,.feature{background:#fff;border:1px solid #e5edf7;border-radius:17px;box-shadow:var(--shadow)}.stat{padding:17px;display:flex;gap:12px;align-items:center}.stat-icon{width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:#eaf2ff;font-size:22px}.stat small{color:var(--muted);display:block;font-size:12px}.stat strong{font-size:23px}.columns{display:grid;grid-template-columns:1.3fr .9fr;gap:16px}.panel{padding:20px;min-width:0}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:15px}.panel h3{margin:0;font-size:17px}.panel-head small{color:var(--muted)}.progress{height:9px;background:#e8eff8;border-radius:20px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;background:linear-gradient(90deg,#2468ed,#61a2ff);border-radius:20%;width:65%}.course-list,.challenge-list,.task-list{display:grid;gap:11px}.course,.challenge,.task{display:flex;align-items:center;gap:12px;padding:13px;border:1px solid var(--line);border-radius:13px;background:#fff}.course-icon,.challenge-icon{width:43px;height:43px;flex-shrink:0;display:grid;place-items:center;border-radius:13px;background:#eef4ff;font-size:22px}.course-info,.challenge-info{min-width:0;flex:1}.course-info strong,.challenge-info strong{display:block;font-size:13px}.course-info small,.challenge-info small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.course .primary,.challenge .primary{padding:8px 13px;font-size:12px}.challenge-status{font-size:11px;color:#099e82;background:#e3faf3;padding:5px 9px;border-radius:20px;white-space:nowrap}.section-title{margin:5px 0 16px;font-size:24px}.muted{color:var(--muted)}.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.feature{padding:20px;transition:.2s}.feature:hover{transform:translateY(-3px);box-shadow:0 14px 35px #183b6417}.feature .big{font-size:28px;width:52px;height:52px;border-radius:15px;background:#eef4ff;display:grid;place-items:center;margin-bottom:13px}.feature h3{margin:0 0 7px;font-size:16px}.feature p{font-size:12px;color:var(--muted);line-height:1.8;min-height:42px}.feature button{width:100%;margin-top:7px}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px}.filters button{background:#fff;border:1px solid var(--line);color:var(--muted);border-radius:20px;padding:8px 15px;font-size:12px}.filters button.active{background:var(--blue);color:white;border-color:var(--blue)}.challenge-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.challenge-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px;display:flex;gap:12px;align-items:center}.challenge-card .challenge-icon{width:52px;height:52px;font-size:25px}.challenge-card .challenge-info{flex:1}.challenge-card h3{margin:0;font-size:14px}.challenge-card p{font-size:11px;color:var(--muted);margin:4px 0}.chatbox{max-width:850px;margin:auto;min-height:470px;display:flex;flex-direction:column;background:white;border:1px solid var(--line);border-radius:20px;overflow:hidden}.chat-head{padding:17px 20px;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:center}.chat-head .avatar{width:43px;height:43px;font-size:24px;margin:0}.chat-body{padding:22px;flex:1;display:flex;flex-direction:column;gap:14px}.bubble{max-width:80%;background:#edf4ff;border-radius:15px 15px 4px 15px;padding:13px 15px;font-size:13px;line-height:1.9}.bubble.me{background:#2468ed;color:white;align-self:flex-start;border-radius:15px 15px 15px 4px}.suggestions{display:flex;gap:8px;flex-wrap:wrap}.suggestions button{border:1px solid var(--line);background:white;border-radius:10px;padding:9px 12px;font-size:12px;color:#385574}.chat-form{display:flex;gap:9px;padding:14px;border-top:1px solid var(--line)}.chat-form input{min-width:0;flex:1;border:1px solid var(--line);border-radius:12px;padding:12px;outline-color:#2468ed}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.field label{display:block;font-size:12px;font-weight:800;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:11px;padding:12px;background:#fbfdff;color:var(--ink);outline-color:var(--blue)}.field textarea{min-height:100px;resize:vertical}.field.full{grid-column:1/-1}.exam-row{display:flex;align-items:center;gap:12px}.exam-row .course-icon{font-size:24px}.exam-row .course-info{flex:1}.community-post{padding:16px 0;border-bottom:1px solid var(--line)}.community-post:last-child{border:0}.post-user{display:flex;align-items:center;gap:10px;font-weight:800;font-size:13px}.post-user .avatar{width:38px;height:38px;font-size:21px;margin:0}.community-post p{font-size:13px;line-height:1.9}.post-actions{color:var(--muted);font-size:12px}.empty-note{padding:35px;text-align:center;color:var(--muted)}.footer{padding:24px 0 5px;color:var(--muted);font-size:11px;text-align:center}.toast{position:fixed;bottom:20px;left:20px;background:#102b4a;color:white;padding:13px 18px;border-radius:12px;box-shadow:var(--shadow);z-index:20;opacity:0;pointer-events:none;transform:translateY(8px);transition:.2s}.toast.show{opacity:1;transform:none}.mobile-menu{display:none}
+@media(max-width:1050px){.shell{grid-template-columns:200px minmax(0,1fr)}.main{padding:20px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.columns{grid-template-columns:1fr}}
+@media(max-width:700px){.shell{display:block}.sidebar{position:fixed;z-index:10;top:0;right:0;width:250px;height:100dvh;transform:translateX(105%);transition:transform .25s;box-shadow:-10px 0 30px #0002}.sidebar.open{transform:translateX(0)}.mobile-menu{display:inline-flex}.main{padding:15px}.topbar{align-items:flex-start}.welcome h1{font-size:20px}.welcome p{font-size:11px}.top-actions .desktop-action{display:none}.hero{padding:23px 20px;min-height:230px}.hero h2{font-size:27px}.hero p{font-size:12px}.hero:after{font-size:80px}.stats{gap:9px}.stat{padding:12px;gap:9px}.stat-icon{width:38px;height:38px;font-size:19px}.stat strong{font-size:20px}.panel{padding:15px}.feature-grid,.challenge-grid{grid-template-columns:1fr}.feature{padding:16px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-title{font-size:21px}.chatbox{min-height:65vh}.bubble{max-width:94%}}
+
+@media(max-width:390px){.stats{grid-template-columns:1fr 1fr}.stat{padding:10px}.stat-icon{display:none}.top-actions{gap:5px}.icon-btn{padding:8px}.hero .primary,.hero .secondary{padding:9px 12px;font-size:12px}}
+/* Mobile layout refinement */
+@media(max-width:700px){
+html,body{width:100%;overflow-x:hidden}
+.shell{display:block;min-height:100dvh;padding-bottom:78px}
+.sidebar{position:fixed;display:flex;top:auto;bottom:0;right:0;left:0;width:100%;height:auto;padding:7px 5px calc(7px + env(safe-area-inset-bottom));gap:0;transform:none;border-radius:18px 18px 0 0;box-shadow:0 -8px 28px #071a3020;z-index:50}
+.sidebar .brand,.sidebar .profile,.sidebar .logout{display:none}
+.sidebar .nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;width:100%}
+.sidebar .nav button{padding:7px 2px;min-width:0;min-height:51px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;text-align:center;border-radius:10px;font-size:9px;line-height:1.25;white-space:normal}
+.sidebar .nav .ico{width:auto;font-size:19px;line-height:1.2}
+.sidebar.open{transform:none}
+.mobile-menu{display:none!important}
+.main{padding:14px 12px 20px;min-width:0}
+.topbar{align-items:center;gap:8px;margin-bottom:15px}
+.welcome{min-width:0;flex:1}
+.welcome h1{font-size:18px;line-height:1.5;overflow-wrap:anywhere}
+.welcome p{font-size:10px;line-height:1.6}
+.top-actions{gap:6px;flex-shrink:0}
+#continueBtn{padding:9px 10px;font-size:11px;max-width:120px;white-space:normal}
+.hero{padding:22px 17px;min-height:220px;border-radius:18px}
+.hero h2{font-size:24px;line-height:1.5}
+.hero p{font-size:12px;line-height:1.9}
+.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0}
+.stat{min-width:0;padding:11px;gap:7px}
+.stat strong{font-size:18px}
+.stat small{font-size:10px;line-height:1.5}
+.stat-icon{display:grid;width:32px;height:32px;font-size:16px;border-radius:10px}
+.columns,.feature-grid,.challenge-grid,.form-grid{grid-template-columns:minmax(0,1fr)}
+.panel{padding:13px;border-radius:15px}
+.panel-head{align-items:flex-start}
+.course,.challenge,.task,.challenge-card{min-width:0;flex-wrap:wrap;padding:11px;gap:9px}
+.course-info,.challenge-info{min-width:0;overflow-wrap:anywhere}
+.course .primary,.challenge .primary,.challenge-card .primary{padding:8px 10px}
+.section-title{font-size:20px;line-height:1.5}
+.feature{min-width:0}
+.feature p{min-height:0}
+.chatbox{min-height:58dvh;border-radius:16px}
+.chat-body{padding:14px}
+.chat-form{padding:10px;gap:7px}
+.chat-form input{width:0}
+.bubble{max-width:94%;overflow-wrap:anywhere}
+.login-screen{padding:14px;min-height:100dvh}
+.login-card{padding:22px 18px;border-radius:20px;width:100%;max-width:440px}
+.login-card h1{font-size:22px}
+.footer{padding:18px 0 8px}
+}
+@media(max-width:360px){
+.main{padding-right:9px;padding-left:9px}
+.welcome h1{font-size:16px}
+#continueBtn{max-width:95px;font-size:10px}
+.stat{padding:9px}
+.stat-icon{display:none}
+.sidebar .nav button{font-size:8px}
+}
+
+.login-screen{position:fixed;inset:0;z-index:100;background:linear-gradient(135deg,#081b31,#163b60);display:grid;place-items:center;padding:20px}.auth-switch{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.auth-switch button{margin:0!important}.login-card{max-height:94dvh;overflow:auto}.login-card [hidden]{display:none!important}.login-card{width:min(100%,460px);background:#fff;border-radius:24px;padding:28px;box-shadow:0 20px 70px #0004}.login-card h1{text-align:center;color:#102b4a}.login-card p{text-align:center;color:#74839b;font-size:13px;line-height:1.8}.login-card label{display:block;font-weight:800;font-size:13px;margin:12px 0 6px}.login-card input,.login-card select{width:100%;padding:12px;border:1px solid #dce5f0;border-radius:11px;background:#f9fbff}.login-card button{width:100%;margin-top:16px}.shell.locked{display:none}.login-brand{text-align:center;font-size:30px;font-weight:900;color:#102b4a}
+
+/* Qimma login page inspired by the supplied reference */
+.login-screen{position:fixed;inset:0;z-index:100;background:linear-gradient(135deg,#4b83bd,#b6d9f2);display:grid;place-items:center;padding:clamp(10px,3vw,38px);overflow:auto}
+.auth-layout{width:min(1100px,100%);min-height:min(690px,calc(100dvh - 40px));display:grid;grid-template-columns:1.2fr .88fr;direction:ltr;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 24px 70px #092b4e40}
+.auth-form-panel{direction:rtl;display:flex;align-items:center;justify-content:center;padding:clamp(22px,4vw,58px);min-width:0}
+.login-card{width:100%;max-width:490px;max-height:calc(100dvh - 55px);overflow:auto;background:transparent;border-radius:0;padding:0;box-shadow:none;color:#172c49}
+.login-card h1{text-align:right;color:#142e50;font-size:clamp(23px,2.4vw,31px);font-weight:900;margin:0 0 4px}
+.login-card p{text-align:right;margin:0;color:#7c8ba1}
+.login-card #authIntro{margin-bottom:22px}
+.auth-mobile-brand{display:none}
+.auth-switch{display:flex;gap:10px;margin:0 0 18px}
+.auth-switch button{flex:1;margin:0!important;border:1px solid #e0e8f2;border-radius:10px;padding:10px;background:#f7faff;color:#50637d;font-size:13px}
+.auth-field{margin:0 0 13px}
+.login-card label{display:block;font-weight:800;font-size:13px;margin:0 0 7px;color:#253b59}
+.login-card input:not([type=checkbox]),.login-card select{width:100%;padding:13px 15px;border:1px solid #dce5f0;border-radius:11px;background:#fff;color:#18314f;outline:none;transition:border-color .2s,box-shadow .2s}
+.login-card input:focus,.login-card select:focus{border-color:#3478ec;box-shadow:0 0 0 3px #3478ec19}
+.password-wrap{position:relative}.password-wrap input{padding-left:48px!important}
+.password-toggle{position:absolute;left:8px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:#8292a8;width:36px!important;margin:0!important;padding:5px!important}
+.auth-options{display:flex;align-items:center;justify-content:space-between;margin:0 0 14px;font-size:12px}
+.login-card .remember-label{display:flex;align-items:center;gap:7px;margin:0;font-weight:700}
+.remember-label input{width:16px;height:16px;accent-color:#2468ed}
+.forgot-button{border:0;background:transparent;color:#315b91;font-size:12px;font-weight:800;padding:0}
+.auth-submit{width:100%;margin:8px 0 0!important;padding:14px!important;border-radius:11px!important;font-size:15px}
+.auth-message{font-size:12px!important;margin-top:10px!important;min-height:18px}
+.login-card .auth-footnote{font-size:10px;text-align:center;margin-top:12px;color:#8a98aa}
+.auth-art{position:relative;direction:rtl;overflow:hidden;min-height:580px;color:#fff;background:radial-gradient(ellipse at 50% 72%,#14508b 0,#0b315c 48%,#062341 100%);display:flex;align-items:center;flex-direction:column;padding:clamp(30px,4vw,55px) 25px 22px}
+.art-stars{position:absolute;inset:0;background-image:radial-gradient(#fff 1px,transparent 1.5px),radial-gradient(#8fc7ff 1px,transparent 1.5px);background-size:73px 83px,113px 127px;background-position:13px 20px,48px 66px;opacity:.35}
+.art-brand{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:55px;font-size:clamp(42px,5vw,62px);font-weight:900;letter-spacing:-2px}
+.art-brand svg{width:82px;height:62px}
+.art-tagline{position:relative!important;text-align:center!important;color:#c1d6ed!important;font-size:18px!important;font-weight:700;margin-top:8px!important}
+.mountain-scene{position:absolute;bottom:0;left:0;width:100%;height:67%;filter:drop-shadow(0 -8px 20px #061a3320)}
+.flag{position:absolute;z-index:2;top:47%;left:34%;height:65px;width:44px;border-right:2px solid #5f9bdc}
+.flag i{position:absolute;top:0;right:0;width:27px;height:17px;background:#2468ed;clip-path:polygon(0 0,100% 0,75% 50%,100% 100%,0 100%)}
+.flag b{display:none}
+.art-bottom{position:absolute;bottom:18px;right:0;left:0;text-align:center;font-size:12px;color:#a7c7e8;z-index:3}
+.login-card [hidden]{display:none!important}
+@media(max-width:760px){.login-screen{padding:0;background:#fff;display:block}.auth-layout{width:100%;min-height:100dvh;border-radius:0;grid-template-columns:minmax(0,1fr);display:block;box-shadow:none}.auth-art{display:none}.auth-form-panel{min-height:100dvh;padding:28px 22px;align-items:center}.login-card{max-width:470px;max-height:calc(100dvh - 40px)}.auth-mobile-brand{display:block;text-align:center;font-size:25px;font-weight:900;color:#102b4a;margin-bottom:28px}.login-card h1{text-align:right}.auth-switch button{font-size:12px}.login-card input:not([type=checkbox]),.login-card select{padding:12px}.auth-options{margin-top:2px}}
+@media(max-height:720px) and (min-width:761px){.auth-art{min-height:0}.art-brand{margin-top:20px}.mountain-scene{height:62%}.auth-form-panel{padding-top:20px;padding-bottom:20px}.login-card #authIntro{margin-bottom:12px}.auth-field{margin-bottom:8px}}
+
+.auth-switch{display:none!important}
+.auth-create-line{display:block!important;text-align:center!important;margin:19px 0 0!important;color:#71819a!important;font-size:13px!important}
+.auth-create-line button{width:auto!important;margin:0!important;padding:0!important;border:0!important;background:transparent!important;color:#2468ed!important;font-weight:900!important;font-size:13px!important}
+.login-card #authIntro{margin-bottom:25px}
+.auth-options{margin-top:2px}
+.login-card .auth-footnote{margin-top:16px}
+
+.auth-create-line{position:relative;z-index:5;display:block;text-align:center!important;margin:19px 0 0!important;color:#71819a!important;font-size:13px!important}
+.auth-create-line a{display:inline-block!important;position:relative;z-index:6;cursor:pointer;text-decoration:none!important;color:#2468ed!important;font-weight:900!important;font-size:13px!important;padding:4px 2px!important;pointer-events:auto!important}
+
+/* Keep registration-only fields completely out of the login screen. */
+#loginForm #nameField[hidden],#loginForm #ageField[hidden],#loginForm #gradeField[hidden],#loginForm #baccalaureateWrap[hidden]{display:none!important;}
+
+/* The auth options use flex display, so hidden must explicitly override it. */
+.auth-options[hidden]{display:none!important;}
+/* Final login layout: keep Remember me and Forgot password directly below the password field, matching the reference. */
+#loginForm .auth-field:has(#loginPassword)+#authOptions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:2px 0 16px;padding:0;min-height:24px}
+#loginForm #authOptions .remember-label{display:flex;align-items:center;gap:7px;white-space:nowrap}
+#loginForm #authOptions .forgot-button{display:inline-flex;align-items:center;justify-content:flex-start;width:auto!important;margin:0!important;padding:4px 0!important;white-space:nowrap}
+#loginForm #authOptions[hidden]{display:none!important}
+
+/* Qimma auth visual polish */
+.auth-layout{border:1px solid #e8eef6;box-shadow:0 28px 90px rgba(9,43,78,.21)}
+.auth-form-panel{background:linear-gradient(145deg,#fff 0%,#fbfdff 100%)}
+.login-card{max-width:460px}
+.login-card #authIntro{line-height:1.9;margin-bottom:25px}
+.login-card .auth-field{margin-bottom:16px}
+.login-card input:not([type=checkbox]),.login-card select{min-height:48px;font-size:14px}
+#loginForm .auth-field:has(#loginPassword)+#authOptions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 18px;padding:0;min-height:26px}
+#loginForm #authOptions .remember-label{display:flex;align-items:center;gap:8px;white-space:nowrap;font-size:12px;color:#526782}
+#loginForm #authOptions .remember-label input{flex:0 0 16px;margin:0}
+#loginForm #authOptions .forgot-button{display:inline-flex;align-items:center;justify-content:flex-start;width:auto!important;margin:0!important;padding:4px 0!important;white-space:nowrap;font-size:12px;color:#2468d8}
+#loginForm #authOptions[hidden]{display:none!important}
+.auth-submit{min-height:49px;box-shadow:0 8px 18px #2468ed24;transition:transform .18s,box-shadow .18s}
+.auth-submit:hover{transform:translateY(-1px);box-shadow:0 11px 22px #2468ed30}
+@media(max-width:760px){.login-screen{padding:10px;align-items:start}.auth-layout{grid-template-columns:1fr;min-height:0;width:min(520px,100%);margin:auto;border-radius:20px}.auth-form-panel{padding:clamp(22px,6vw,34px)}.login-card{max-height:none;overflow:visible}.auth-art{display:none}}
+@media(max-width:380px){.auth-form-panel{padding:20px 16px}#loginForm .auth-field:has(#loginPassword)+#authOptions{gap:8px}#loginForm #authOptions .remember-label,#loginForm #authOptions .forgot-button{font-size:11px}}
+
+/* Qimma inner-platform visual refresh */
+:root{--bg:#f3f7fc;--line:#e4ebf5;--shadow:0 12px 32px rgba(16,43,74,.07)}
+body{background:#f3f7fc}
+.shell{grid-template-columns:248px minmax(0,1fr);gap:0}
+.sidebar{padding:24px 16px;background:linear-gradient(180deg,#102b4a 0%,#0b2340 100%);box-shadow:8px 0 30px #102b4a0a;z-index:5}
+.brand{font-size:27px;letter-spacing:-.5px}
+.profile{padding:18px 12px;border:1px solid #ffffff18;border-radius:18px;background:linear-gradient(135deg,#ffffff12,#ffffff06);text-align:center}
+.profile .avatar{width:58px;height:58px;margin:0 auto 10px;display:grid;place-items:center;border-radius:18px;background:#ffffff16;font-size:30px}
+.profile strong{display:block;font-size:14px}
+.profile small{display:block;margin-top:4px;line-height:1.8;color:#c1d2e6}
+.nav{gap:7px}
+.nav button{min-height:46px;border:1px solid transparent;border-radius:12px;padding:10px 12px;transition:background .18s,border-color .18s,transform .18s}
+.nav button:hover{background:#ffffff12;transform:translateX(-2px)}
+.nav button.active{background:linear-gradient(90deg,#2468ed35,#2468ed17);border-color:#78a9ff40;box-shadow:inset -3px 0 #69a0ff}
+.nav .ico{width:27px;height:27px;display:inline-grid;place-items:center;border-radius:8px;background:#ffffff10;margin-left:8px}
+.logout{border-radius:12px!important;border:1px solid #ffffff1c!important;background:#ffffff08!important;padding:11px!important}
+.main{padding:clamp(18px,3vw,34px);min-width:0}
+.topbar{gap:16px;margin-bottom:24px;padding:20px 22px;border:1px solid #e5edf7;border-radius:20px;background:#fff;box-shadow:0 6px 22px #173d6309}
+.welcome h1{font-size:clamp(21px,2.2vw,29px);font-weight:900;letter-spacing:-.4px}
+.welcome p{margin-top:4px;color:#8290a5}
+.top-actions{gap:10px}
+.top-actions button{border-radius:12px!important}
+.primary{box-shadow:0 7px 16px #2468ed20;transition:transform .18s,box-shadow .18s}
+.primary:hover{transform:translateY(-1px);box-shadow:0 10px 22px #2468ed30}
+.hero{position:relative;overflow:hidden;border-radius:24px;background:linear-gradient(120deg,#102b4a 0%,#174d7d 58%,#2468ed 125%);box-shadow:0 18px 40px #123d6822}
+.hero:after{content:"";position:absolute;left:-65px;bottom:-135px;width:300px;height:300px;border:1px solid #ffffff24;border-radius:50%;box-shadow:0 0 0 35px #ffffff08,0 0 0 75px #ffffff06;pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:760px;padding:clamp(25px,4vw,44px)}
+.hero .eyebrow{display:inline-flex;align-items:center;padding:6px 12px;border:1px solid #ffffff30;border-radius:999px;background:#ffffff12;color:#d7e8ff;font-size:12px;font-weight:800}
+.hero h2{font-size:clamp(24px,3vw,36px);line-height:1.5;margin:13px 0 8px;color:#fff}
+.hero p{max-width:650px;color:#d6e4f4;line-height:2}
+.hero .primary{background:#fff!important;color:#164578!important}
+.hero .secondary{border:1px solid #ffffff50!important;background:#ffffff10!important;color:#fff!important}
+.stats{gap:14px;margin:20px 0}
+.stat,.panel,.feature-card,.content-card,.challenge-card,.exam-card,.library-card{border:1px solid #e5edf6;border-radius:18px;background:#fff;box-shadow:0 7px 22px #173d6308;transition:transform .18s,box-shadow .18s}
+.stat:hover,.feature-card:hover,.content-card:hover,.challenge-card:hover,.exam-card:hover,.library-card:hover{transform:translateY(-2px);box-shadow:0 13px 28px #173d6312}
+.stat{padding:18px}
+.stat strong,.stat .number{font-size:25px;font-weight:900;color:#173d63}
+.view{animation:qimmaFadeIn .22s ease both}
+@keyframes qimmaFadeIn{from{opacity:.55;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.view h2,.view h3{letter-spacing:-.2px}
+input,textarea,select{border-radius:11px}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #78a9ff;outline-offset:2px}
+@media(max-width:900px){.shell{grid-template-columns:1fr}.sidebar{height:auto;position:relative}.main{padding:16px}.topbar{padding:16px;border-radius:16px}}
+@media(max-width:600px){.main{padding:12px}.topbar{align-items:flex-start;flex-direction:column;gap:12px;margin-bottom:16px}.top-actions{width:100%;display:flex;flex-wrap:wrap}.top-actions button{flex:1}.hero{border-radius:18px}.hero-content{padding:23px}.stats{gap:9px}.stat{padding:13px}}
+
+
+/* Mobile navigation: five shortcuts plus a More menu */
+@media(max-width:700px){
+ .sidebar .nav{grid-template-columns:repeat(6,minmax(0,1fr));align-items:stretch}
+ .sidebar .nav>.more-nav-items{display:none!important;position:fixed;z-index:60;bottom:calc(68px + env(safe-area-inset-bottom));left:10px;right:10px;background:#102b4a;border:1px solid #ffffff25;border-radius:15px;padding:8px;box-shadow:0 -8px 28px #071a3030;grid-template-columns:minmax(0,1fr);gap:5px;max-height:55dvh;overflow-y:auto}
+ .sidebar .nav>.more-nav-items.open{display:grid!important}
+  .sidebar .nav>.more-nav-items button{min-height:58px;padding:7px 3px}
+ .sidebar .nav>.more-nav-toggle{min-height:51px;padding:7px 2px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;text-align:center;border-radius:10px;font-size:9px;line-height:1.25;white-space:normal}
+ .sidebar .nav>.more-nav-toggle .ico{width:auto;font-size:19px;line-height:1.2}
+}
+
+/* Qimma logo beside the student name */
+.welcome-title-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.header-brand-mark{display:inline-flex;align-items:center;gap:4px;color:#173d63;font-size:14px;font-weight:900;white-space:nowrap}
+.header-brand-mark span{font-size:20px}
+/* Mobile navigation flows at the bottom of the page (not fixed to viewport) */
+@media(max-width:700px){
+  .shell{display:flex!important;flex-direction:column!important;min-height:100dvh!important;padding-bottom:0!important}
+  .main{order:1!important;flex:1 0 auto!important;padding-bottom:20px!important}
+  .sidebar{
+    order:2!important;position:relative!important;top:auto!important;bottom:auto!important;
+    right:auto!important;left:auto!important;width:100%!important;height:auto!important;
+    min-height:0!important;max-height:none!important;display:flex!important;
+    flex-direction:column!important;transform:none!important;
+    padding:7px 5px calc(7px + env(safe-area-inset-bottom))!important;gap:0!important;
+    border-radius:18px 18px 0 0!important;z-index:1!important;
+  }
+  .sidebar .brand,.sidebar .profile,.sidebar .logout{display:none!important}
+  .sidebar .nav{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;width:100%!important;gap:2px!important}
+  .sidebar .nav>button{min-width:0!important}
+  .sidebar.open{transform:none!important}
+  .mobile-menu{display:none!important}
+}
+
+/* QIMMA premium navy dashboard refresh */
+:root{--navy:#071d3b;--navy2:#0b2b55;--blue:#2387f5;--blue2:#176bd1;--ink:#edf5ff;--muted:#a9bfd9;--bg:#061a35;--line:#1b416e;--white:#0b2a50;--shadow:0 12px 28px #020d20aa}
+body{background:radial-gradient(ellipse at 45% 0%,#103765 0,#061a35 62%);color:#edf5ff}
+.shell{grid-template-columns:245px minmax(0,1fr);background:transparent}
+.sidebar{background:linear-gradient(180deg,#061a35,#04152c);border-left:1px solid #1a3d67;color:#edf5ff;padding:24px 16px}
+.brand{font-size:29px;color:#eaf5ff}.profile{background:#0b2a50;border-color:#204875}.avatar{background:linear-gradient(145deg,#c9e4ff,#fff)}
+.nav button{color:#b7cbe3}.nav button:hover,.nav button.active{background:linear-gradient(90deg,#176bd1,#258cf5);box-shadow:0 7px 20px #0874ed35}
+.main{padding:25px 30px 34px;max-width:1700px;width:100%;margin:auto}
+.topbar{padding:0 2px 17px;border-bottom:1px solid #1b416e}
+.welcome h1{color:#f4f8ff;font-size:27px}.welcome p{color:#9fb8d5}
+.icon-btn{background:#0c2b51;border-color:#214875;color:#e7f2ff}
+.hero{min-height:250px;padding:30px 34px;border:1px solid #1e4a7b;background:linear-gradient(105deg,#061b37f2 0%,#0a2e5bf0 55%,#123f76e8 100%);box-shadow:0 18px 40px #020d2066;justify-content:space-between;gap:25px}
+.hero:after{content:' ';left:0;bottom:0;width:48%;height:100%;opacity:.8;background:linear-gradient(90deg,#061b3722,#061b37aa),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80') center/cover;clip-path:polygon(0 42%,12% 32%,24% 48%,39% 20%,53% 47%,68% 12%,82% 45%,100% 30%,100% 100%,0 100%);font-size:0}
+.hero-content{max-width:600px}.eyebrow{color:#77c5ff}.hero h2{font-size:34px;color:#fff}.hero p{color:#c3d8ef}
+.hero-progress{position:relative;z-index:2;flex:0 0 230px;min-height:205px;border:1px solid #28609a;border-radius:18px;background:#061d3bd9;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:9px;text-align:center;padding:14px}
+.hero-progress>span{font-size:13px;font-weight:800;color:#d8eaff}.hero-progress small{font-size:12px;line-height:1.8;color:#c3d8ef}.hero-progress>strong{color:#5dbbff;font-size:20px}
+.progress-ring{width:104px;height:104px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(closest-side,#061d3b 82%,transparent 84% 99%),conic-gradient(#20b8f0 0 68%,#173c67 68% 100%);box-shadow:0 0 25px #168ce933}
+.progress-ring b{font-size:22px;color:#fff}
+.stat,.panel,.feature{background:linear-gradient(145deg,#0d2d55,#092448);border:1px solid #1b4778;box-shadow:var(--shadow);color:#eef6ff}
+.stat{padding:18px;border-radius:16px}.stat small,.panel-head small,.muted{color:#a9bfd9}.stat strong{color:#fff}.stat-icon{background:#174574;color:#fff}
+.progress{background:#16385f}.progress span{background:linear-gradient(90deg,#168ef4,#39c6f2)}
+.course,.challenge,.task,.challenge-card{background:#0c2a50;border-color:#204875;color:#edf5ff}
+.course-info strong,.challenge-info strong{color:#f3f8ff}.course-info small,.challenge-info small{color:#a9bfd9}
+.secondary{background:#153d69;color:#9bcaff}.feature:hover{box-shadow:0 14px 35px #0006}
+.section-title{color:#f1f7ff}.filters button{background:#0c2a50;border-color:#214875;color:#c4d8ef}.filters button.active{background:#176bd1}
+.qimma-shortcuts{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin:18px 0}
+.qimma-shortcuts button{min-width:0;min-height:130px;padding:16px 10px;border:1px solid #225183;border-radius:15px;background:linear-gradient(145deg,#123765,#0a284c);color:#f4f8ff;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;transition:.2s}
+.qimma-shortcuts button:hover{transform:translateY(-3px);border-color:#39a8ff;box-shadow:0 10px 25px #00142f88}
+.qimma-shortcuts i{font-style:normal;font-size:25px;width:48px;height:48px;border-radius:14px;background:#1d5a98;display:grid;place-items:center}
+.qimma-shortcuts b{font-size:13px}.qimma-shortcuts small{font-size:10px;color:#a9c5e4}
+.task input{accent-color:#2387f5}
+.chatbox{background:#0b2a50;border-color:#1d4776}.chat-head,.chat-form{border-color:#1d4776}.bubble{background:#143b68;color:#eef6ff}.bubble.me{background:#176bd1}
+.chat-form input,.field input,.field select,.field textarea{background:#071f3e;border-color:#244a74;color:#f2f7ff}
+.community-post{border-color:#204875}.post-user{color:#f2f7ff}
+.toast{background:#0b2a50;border:1px solid #2a5b8d}
+@media(max-width:1100px){.qimma-shortcuts{grid-template-columns:repeat(3,minmax(0,1fr))}.hero-progress{flex-basis:190px}}
+@media(max-width:700px){.main{padding:14px 12px 20px}.hero{padding:20px 16px;gap:12px}.hero-progress{flex-basis:112px;min-height:160px;padding:8px}.progress-ring{width:78px;height:78px}.hero-progress small{font-size:10px}.hero h2{font-size:23px}.hero:after{width:45%;opacity:.35}.qimma-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0}.qimma-shortcuts button{min-height:112px;padding:12px 7px}.qimma-shortcuts b{font-size:12px}.stats{margin-top:12px}}
+@media(max-width:420px){.hero{display:block}.hero-progress{margin-top:14px;min-height:0;display:grid;grid-template-columns:auto auto;justify-content:space-around}.hero-progress>span,.hero-progress small{grid-column:1/-1}.progress-ring{grid-row:2;grid-column:1}.hero-progress>strong{display:none}}
+
+.video-search-panel{margin:18px 0 20px}.video-search-form{display:flex;gap:10px;align-items:stretch}.video-search-form input{flex:1;min-width:0;border:1px solid var(--line);border-radius:12px;padding:12px;background:#fbfdff;outline-color:var(--blue)}.video-results{margin-top:16px}.video-results-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.video-result{min-width:0;border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff}.video-result h4{font-size:13px;line-height:1.7;margin:0 0 5px}.video-result .video-channel{font-size:11px;color:var(--muted);margin:0 0 8px}.video-result p{font-size:11px;line-height:1.7;color:var(--muted);margin:8px 0 0}.video-frame{position:relative;aspect-ratio:16/9;background:#0b1e32;border-radius:10px;overflow:hidden}.video-frame iframe{width:100%;height:100%;border:0;position:absolute;inset:0}.video-loading,.video-error{padding:16px;border-radius:12px;background:#f3f7fc;color:var(--muted);font-size:13px}.video-error{color:#a33;background:#fff1f1}@media(max-width:700px){.video-search-form{flex-direction:column}.video-search-form button{width:100%}.video-results-grid{grid-template-columns:1fr}}
+/* Qimma digital books library */
+.library-controls{margin-bottom:18px}.library-controls-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.library-search{margin-top:12px}.library-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:13px}.library-subhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:18px 2px 12px}.library-subhead h3{margin:0;font-size:17px}.library-note{margin-top:16px;font-size:12px;line-height:1.9}.library-note p{margin:6px 0 0;color:var(--muted)}.book-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px;min-width:0;box-shadow:var(--shadow)}.book-card .book-mark{width:46px;height:46px;border-radius:13px;background:#eef4ff;display:grid;place-items:center;font-size:23px;margin-bottom:11px}.book-card h3{font-size:15px;margin:0 0 6px}.book-card p{font-size:12px;color:var(--muted);line-height:1.8;min-height:42px;margin:0 0 12px}.book-card .book-meta{font-size:11px;color:#63758e;margin-bottom:12px}.book-links{display:flex;gap:8px;flex-wrap:wrap}.book-links a{font-size:11px;font-weight:800;color:var(--blue);text-decoration:none;background:#edf4ff;padding:8px 10px;border-radius:9px}.book-links a:hover{text-decoration:underline}.book-status{display:inline-block;font-size:10px;color:#8a5a10;background:#fff5df;border-radius:20px;padding:4px 9px;margin-bottom:9px}@media(max-width:800px){.library-controls-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:430px){.library-controls-grid{grid-template-columns:1fr}.library-subhead{align-items:flex-start;flex-direction:column}}
+
+.book-reader{position:fixed;inset:3vh 3vw;z-index:10000;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 20px 80px #07152b55;display:flex;flex-direction:column;overflow:hidden}.book-reader[hidden]{display:none}.book-reader-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line)}.book-reader-head strong,.book-reader-head small{display:block}.book-reader-head small{font-size:11px;color:var(--muted);margin-top:3px}.book-reader iframe{width:100%;height:100%;border:0;background:#f4f6fa}.book-card .book-open{border:0;cursor:pointer;font:inherit;font-size:12px;font-weight:800;color:#fff;background:var(--blue);padding:9px 13px;border-radius:9px}.book-card .book-open:disabled{opacity:.55;cursor:not-allowed}.book-empty{grid-column:1/-1;padding:22px;border:1px dashed var(--line);border-radius:14px;color:var(--muted);text-align:center;line-height:1.9}
+@media(max-width:600px){.book-reader{inset:1vh 1vw;border-radius:12px}.book-reader-head{padding:9px}}
+
+/* QIMMA 2026 — refined premium visual system (presentation-only overrides) */
+:root{
+ --q-surface:#0b2444;--q-surface-raised:#102f55;--q-stroke:rgba(153,193,235,.17);
+ --q-cyan:#58c7f4;--q-lilac:#9bafff;--q-radius:22px;
+}
+body{font-feature-settings:"kern";-webkit-font-smoothing:antialiased}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+ outline:3px solid #69c8ff!important;outline-offset:3px
+}
+.shell{gap:0}
+.sidebar{
+ background:linear-gradient(165deg,#071b35 0%,#06162c 58%,#0a2442 100%);
+ border-left:1px solid rgba(126,180,232,.2);
+ box-shadow:-18px 0 50px rgba(0,8,22,.15)
+}
+.brand{letter-spacing:-.8px}
+.profile{border-radius:20px;background:linear-gradient(145deg,rgba(30,76,124,.55),rgba(10,35,66,.75));border-color:var(--q-stroke)}
+.profile .avatar{box-shadow:0 8px 24px #020d2080}
+.nav{gap:7px}
+.nav button{min-height:45px;border:1px solid transparent;transition:background .18s,border-color .18s,transform .18s}
+.nav button:hover{transform:translateX(-2px);border-color:#3d78b344}
+.nav button.active{background:linear-gradient(100deg,#176bd1,#258cf5);box-shadow:0 8px 22px #0874ed2b}
+.main{max-width:1600px;padding:30px clamp(18px,3vw,46px) 42px}
+.topbar{margin-bottom:24px;padding-bottom:20px;border-color:rgba(153,193,235,.14)}
+.welcome h1{font-size:clamp(22px,2vw,30px);letter-spacing:-.5px}
+.welcome p{font-size:13px}
+.header-brand-mark{border:1px solid var(--q-stroke);border-radius:999px;padding:5px 11px;background:#0c2b50}
+.hero{
+ min-height:270px;border-radius:26px;padding:clamp(22px,3vw,40px);
+ border:1px solid rgba(115,181,239,.27);
+ background:radial-gradient(ellipse at 12% 12%,rgba(48,133,203,.26),transparent 38%),linear-gradient(112deg,#071a34 0%,#0b2b50 57%,#123f70 100%);
+ box-shadow:0 24px 60px rgba(0,8,22,.28)
+}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 35%,rgba(1,14,31,.22));pointer-events:none}
+.hero:after{opacity:.42;filter:saturate(.75)}
+.hero h2{font-size:clamp(27px,3vw,39px);line-height:1.45;letter-spacing:-.8px}
+.hero p{font-size:14px;max-width:560px}
+.hero .primary,.hero .secondary{min-height:45px;padding-inline:20px}
+.hero-progress{border-radius:22px;background:rgba(4,23,46,.78);backdrop-filter:blur(12px);border-color:rgba(114,190,255,.26)}
+.stats{gap:15px;margin:20px 0}
+.stat,.panel,.feature{
+ border-radius:20px;border-color:var(--q-stroke);
+ background:linear-gradient(145deg,rgba(15,47,83,.96),rgba(8,33,63,.98));
+ box-shadow:0 12px 32px rgba(0,8,22,.17)
+}
+.stat{min-height:92px;padding:18px}
+.stat-icon{border:1px solid rgba(126,191,246,.13);background:linear-gradient(145deg,#1a568a,#123c69)}
+.stat strong{font-size:25px;font-variant-numeric:tabular-nums}
+.panel{padding:22px}
+.panel h3,.section-title{letter-spacing:-.3px}
+.panel-head{margin-bottom:18px}
+.progress{height:10px;background:#18395f}
+.progress span{background:linear-gradient(90deg,#2387f5,#58c7f4)}
+.course,.challenge,.task,.challenge-card{
+ border-radius:16px;border-color:rgba(153,193,235,.14);
+ background:rgba(5,27,53,.52);transition:border-color .18s,transform .18s
+}
+.course:hover,.challenge:hover,.challenge-card:hover{border-color:#3d8dd0;transform:translateY(-2px)}
+.course-icon,.challenge-icon{background:linear-gradient(145deg,#1a5488,#123b67)}
+.qimma-shortcuts{gap:14px;margin:20px 0}
+.qimma-shortcuts button{
+ min-height:142px;border-radius:19px;border-color:rgba(125,186,239,.2);
+ background:linear-gradient(145deg,#123b68,#0a2547);
+ box-shadow:0 10px 25px rgba(0,8,22,.13)
+}
+.qimma-shortcuts button:hover{transform:translateY(-4px);box-shadow:0 16px 32px #00142f80}
+.qimma-shortcuts i{background:linear-gradient(145deg,#236eaa,#174775);border:1px solid #70b9ee25}
+.feature{padding:22px;transition:transform .2s,border-color .2s,box-shadow .2s}
+.feature:hover{transform:translateY(-4px);border-color:#3988c5}
+.feature .big{background:linear-gradient(145deg,#1b578d,#123b67);border:1px solid #75b9e52a}
+.primary{background:linear-gradient(110deg,#176bd1,#258cf5);box-shadow:0 7px 20px #0b68d338}
+.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.secondary{border:1px solid rgba(109,174,235,.18)}
+.chatbox{border-radius:22px;box-shadow:0 16px 42px rgba(0,8,22,.2)}
+.chat-head{background:linear-gradient(110deg,#0c2e55,#0b2545)}
+.chat-form{background:#091f3b}
+.chat-form input,.field input,.field select,.field textarea{border-radius:13px}
+.video-result,.book-card{background:linear-gradient(145deg,#102f55,#0b2444);border-color:var(--q-stroke);color:#edf5ff}
+.video-result p,.book-card p,.book-card .book-meta{color:#a9bfd9}
+.video-loading,.video-error,.book-empty{background:#0c2a4c;border-color:#234b75;color:#b8cce3}
+.toast{border-radius:14px;backdrop-filter:blur(12px)}
+/* Authentication experience */
+.login-screen{
+ background:radial-gradient(ellipse at 78% 16%,#8fc4eb 0%,transparent 34%),linear-gradient(135deg,#153e68 0%,#3979ad 48%,#a7cce8 100%);
+}
+.auth-layout{
+ width:min(1160px,100%);min-height:min(720px,calc(100dvh - 48px));
+ border:1px solid rgba(255,255,255,.5);border-radius:30px;
+ box-shadow:0 32px 90px rgba(4,28,55,.34)
+}
+.auth-form-panel{background:linear-gradient(145deg,#fff 0%,#f7faff 100%)}
+.login-card #authIntro{font-size:13px;line-height:1.9}
+.login-card input:not([type=checkbox]),.login-card select{
+ min-height:49px;background:#fff;border-color:#dbe6f2;border-radius:13px
+}
+.auth-submit{min-height:51px!important;font-weight:900!important;letter-spacing:.1px}
+.auth-switch button{min-height:43px;border-radius:12px}
+.auth-art{background:radial-gradient(ellipse at 50% 74%,#1d5d98 0%,#0c315a 48%,#061d38 100%)}
+.art-brand{letter-spacing:-2px;text-shadow:0 8px 35px #0004}
+.art-tagline{letter-spacing:.2px}
+.auth-art:after{content:"";position:absolute;inset:auto 0 0;height:38%;background:linear-gradient(transparent,rgba(1,15,32,.28));pointer-events:none}
+.auth-message{line-height:1.8}
+.guest-btn{
+ width:100%;min-height:48px;margin-top:10px;
+ background:#f0f6ff;color:#1862c6;border:1.5px dashed #2468ed;
+ border-radius:13px;font-weight:800;font-size:14px;
+ display:flex;align-items:center;justify-content:center;gap:8px;
+ cursor:pointer;transition:.2s;
+}
+.guest-btn:hover{background:#e2eeff;transform:translateY(-1px);border-style:solid}
+@media(max-width:900px){
+ .auth-layout{grid-template-columns:1fr;max-width:560px;min-height:0}
+ .auth-art{display:none}
+ .auth-form-panel{padding:clamp(22px,6vw,42px)}
+ .auth-mobile-brand{display:block;text-align:center;font-size:27px;font-weight:900;color:#12385f;margin-bottom:20px}
+ .main{padding:22px 20px 34px}
+}
+@media(max-width:700px){
+ .main{padding:14px 12px 22px}
+ .topbar{padding-bottom:14px;margin-bottom:16px}
+ .welcome h1{font-size:18px}
+ .hero{min-height:0;padding:22px 18px;border-radius:21px;display:block}
+ .hero h2{font-size:25px}
+ .hero p{font-size:12px}
+ .hero-progress{display:grid;grid-template-columns:auto auto;gap:8px;margin-top:17px;min-height:0;flex-basis:auto;padding:12px}
+ .hero-progress>span,.hero-progress small{grid-column:1/-1}
+ .progress-ring{width:76px;height:76px;grid-column:1;grid-row:2}
+ .hero-progress>strong{grid-column:2;grid-row:2;align-self:center}
+ .stats{gap:9px;margin:13px 0}
+ .stat{min-height:76px;padding:12px;border-radius:16px}
+ .stat strong{font-size:20px}
+ .panel{padding:15px;border-radius:17px}
+ .qimma-shortcuts{gap:9px}
+ .qimma-shortcuts button{min-height:112px;border-radius:15px}
+ .qimma-shortcuts i{width:42px;height:42px;font-size:22px}
+ .feature{padding:17px;border-radius:17px}
+ .sidebar .nav button{min-height:55px}
+ .auth-layout{min-height:0;border-radius:22px}
+ .auth-form-panel{padding:23px 18px}
+ .login-card{max-height:calc(100dvh - 36px)}
+ .login-card h1{font-size:23px}
+ .auth-field{margin-bottom:11px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
+</style></head>
+<body>
+<section class="login-screen" id="loginScreen">
+  <div class="auth-layout">
+    <div class="auth-form-panel">
+      <form class="login-card" id="loginForm">
+        <div class="auth-mobile-brand">⛰ قِمّة</div>
+        <h1 id="authHeading">تسجيل الدخول إلى قِمّة</h1>
+        <p id="authIntro">ادخل ببريدك الإلكتروني وكلمة السر.</p>
+        
+        <div class="auth-field" id="nameField" hidden><label for="loginName">الاسم</label><input id="loginName" maxlength="60" autocomplete="name" placeholder="اكتب اسمك"></div>
+        <div class="auth-field"><label for="loginEmail">البريد الإلكتروني</label><input id="loginEmail" type="email" required autocomplete="email" placeholder="اكتب بريدك الإلكتروني"></div>
+        <div class="auth-field" id="phoneField" hidden><label for="loginPhone">رقم الهاتف</label><input id="loginPhone" type="tel" inputmode="tel" autocomplete="tel" maxlength="16" placeholder="01xxxxxxxxx" pattern="(?:\\+20|0020|0)?1[0125][0-9]{8}" title="اكتب رقم هاتف مصري صحيحًا مثل 01012345678"></div>
+        
+        
+        <div class="auth-field" id="ageField" hidden><label for="loginAge">السن</label><input id="loginAge" type="number" min="5" max="100" placeholder="مثال: 16"></div>
+        <div class="auth-field" id="gradeField" hidden><label for="loginGrade">الصف الدراسي</label><select id="loginGrade"><option value="">اختر صفك الدراسي</option><option>الصف الأول الابتدائي</option><option>الصف الثاني الابتدائي</option><option>الصف الثالث الابتدائي</option><option>الصف الرابع الابتدائي</option><option>الصف الخامس الابتدائي</option><option>الصف السادس الابتدائي</option><option>الصف الأول الإعدادي</option><option>الصف الثاني الإعدادي</option><option>الصف الثالث الإعدادي</option><option value="الصف الأول الثانوي">أولى بكالوريا</option><option>الصف الثاني الثانوي</option><option>الصف الثالث الثانوي</option><option>المرحلة الجامعية</option></select></div>
+        <div class="auth-field"><label for="loginPassword">كلمة السر</label><div class="password-wrap"><input id="loginPassword" type="password" required minlength="8" autocomplete="current-password" placeholder="كلمة السر"><button type="button" class="password-toggle" id="togglePassword" aria-label="إظهار كلمة السر">◉</button></div></div>
+        <div class="auth-options" id="authOptions"><label class="remember-label" id="rememberLine"><input type="checkbox" id="rememberMe"> تذكرني</label><button type="button" class="forgot-button" id="forgotPassword">نسيت كلمة السر؟</button></div>
+        <div id="baccalaureateWrap" class="auth-field" hidden><label for="studySystem">نظام دراستك في الثانوية</label><select id="studySystem"><option value="">اختار النظام</option><option value="baccalaureate">البكالوريا المصرية</option><option value="general">الثانوية العامة</option></select></div><div id="registerTrackWrap" class="auth-field" hidden><label for="loginTrack">مسار البكالوريا</label><select id="loginTrack"><option value="">اختار المسار</option><option value="medicine">الطب وعلوم الحياة</option><option value="engineering">الهندسة وعلوم الحاسب</option><option value="business">الأعمال</option><option value="arts">الآداب والفنون</option></select></div>
+        <button class="primary auth-submit" id="authSubmit">تسجيل الدخول</button>
+        <button type="button" class="guest-btn" id="guestBtn">🚀 تجربة المنصة كـ زائر (بدون تسجيل)</button>
+        <p id="authMessage" role="status" class="auth-message"></p>
+        <div class="auth-create-line" id="createLine"><span id="authSwitchText">ليس لديك حساب؟</span> <a href="#create-account" id="registerMode" role="button">إنشاء حساب</a></div>
+        <p class="auth-footnote" id="authFootnote" hidden>تحتاج إلى تأكيد بريدك الإلكتروني عند إنشاء الحساب. يمكنك الدخول من أي جهاز.</p>
+      </form>
+    </div>
+    <aside class="auth-art" aria-label="قمة جبلية وسماء ليلية">
+      <div class="art-stars"></div><div class="art-brand"><span>قِمّة</span><svg viewBox="0 0 100 70" aria-hidden="true"><path d="M3 61 30 19 43 38 58 8 97 61H3Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="m22 61 21-30 12 18 8-14 20 26" fill="none" stroke="currentColor" stroke-width="3" opacity=".65"/></svg></div>
+      <p class="art-tagline">طريقك نحو التفوق</p>
+      <div class="flag"><i></i><b></b><b></b><b></b></div>
+      <svg class="mountain-scene" viewBox="0 0 600 650" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs><linearGradient id="peak" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7b9fca"/><stop offset=".48" stop-color="#234d7d"/><stop offset="1" stop-color="#061c38"/></linearGradient><linearGradient id="snow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f3e8e0"/><stop offset="1" stop-color="#718eb1"/></linearGradient></defs><path d="M0 390 110 300 170 345 285 210 365 300 430 250 600 365V650H0Z" fill="#173e6c"/><path d="M20 650 100 440 195 355 270 245 340 355 390 300 500 420 600 470V650Z" fill="url(#peak)"/><path d="m270 245 70 110-53-29-31-39-30 40Z" fill="url(#snow)" opacity=".9"/><path d="M0 520 95 465 155 505 250 410 350 495 450 420 600 520V650H0Z" fill="#0a2b50" opacity=".9"/><g fill="#061b34"><path d="m0 620 42-115 42 115Zm48 30 45-140 48 140Zm78 0 36-110 38 110Zm300 0 43-125 43 125Zm55 0 54-160 55 160Zm-120 0 34-105 36 105Z"/></g></svg>
+      <div class="art-bottom">كل خطوة تقرّبك من هدفك</div>
+    </aside>
+  </div>
+</section>
+<div class="shell locked" id="appShell">
+<aside class="sidebar" id="sidebar"><div class="brand"><span class="mountain">⛰</span> قِمّة</div>
+<div class="profile"><div class="avatar">👨🏻‍🎓</div><strong id="sideName">أحمد محمد</strong><small id="sideGrade">ثانوية عامة | الصف الثاني الثانوي</small><span class="tag">طالب</span></div>
+<nav class="nav" id="nav">
+<button class="active" data-view="home"><span class="ico">⌂</span> الرئيسية</button>
+<button data-view="challenges"><span class="ico">♧</span> التحديات</button>
+<button data-view="exams"><span class="ico">▣</span> الامتحانات والنتائج</button>
+<button data-view="library"><span class="ico">▤</span> مكتبة الكتب</button>
+<button data-view="teachers"><span class="ico">🎓</span> المدرسين</button>
+<button data-view="assistant"><span class="ico">✧</span> المساعد الذكي</button>
+<div class="more-nav-items" id="moreNavItems">
+<button data-view="community"><span class="ico">♧</span> مجتمع الطلاب</button>
+<button data-view="teacher"><span class="ico">▦</span> لوحة الأستاذ</button>
+<button data-view="settings"><span class="ico">⚙</span> الإعدادات</button>
+</div>
+<button type="button" class="more-nav-toggle" id="moreNavToggle" aria-expanded="false"><span class="ico">•••</span> المزيد</button>
+</nav><button class="logout" id="logout">↪ تسجيل الخروج</button></aside>
+<main class="main"><header class="topbar"><div class="welcome"><div class="welcome-title-row"><h1 id="pageTitle">مرحبًا أحمد 👋</h1><span class="header-brand-mark"><span>⛰</span> قِمّة</span></div><p id="pageSubtitle">استعد لتحقيق إنجاز جديد اليوم</p></div><div class="top-actions"><button class="icon-btn" id="themeToggleBtn" aria-label="تبديل المظهر" title="تبديل الوضع الليلي">🌙</button><button class="icon-btn mobile-menu" id="menuBtn" aria-label="فتح القائمة">☰</button><button class="icon-btn desktop-action" id="profileBtn">👤 حسابي</button><button class="primary" id="continueBtn">ابدأ المذاكرة ←</button></div></header>
+<section class="view active" id="view-home">
+<div class="hero"><div class="hero-content"><span class="eyebrow">طريقك نحو التفوق يبدأ هنا</span><h2>قِمّة — مستقبلُك يستحق الأفضل</h2><p>منصة تعليمية ذكية تساعدك على تنظيم وقتك، وفهم دروسك، والتدرّب على الامتحانات، وتحقيق أهدافك خطوة بخطوة.</p><button class="primary" data-go="library">ابدأ الآن</button> <button class="secondary" data-go="assistant">اسأل المساعد الذكي</button></div><aside class="hero-progress"><span>مستوى التقدم</span><div class="progress-ring"><b id="heroProgress">0%</b></div><small>أنت في طريقك للنجاح<br>استمر في المذاكرة!</small><strong>⛰</strong></aside></div>
+<div class="stats"><div class="stat"><div class="stat-icon">💎</div><div><small>نقاط التفوق</small><strong id="points">0</strong></div></div><div class="stat"><div class="stat-icon">🏆</div><div><small>التحديات المكتملة</small><strong id="doneCount">0</strong></div></div><div class="stat"><div class="stat-icon">📚</div><div><small>موادك الدراسية</small><strong>6</strong></div></div><div class="stat"><div class="stat-icon">🎯</div><div><small>معدل الإنجاز</small><strong id="progressLabel">0%</strong></div></div></div>
+<div class="qimma-shortcuts">
+<button data-go="library"><i>📚</i><b>مكتبة المذاكرة</b><small>ملفات وملخصات</small></button>
+<button data-go="exams"><i>📝</i><b>الامتحانات والنتائج</b><small>اختبر مستواك</small></button>
+<button data-go="challenges"><i>🏆</i><b>التحديات</b><small>حقق المزيد</small></button>
+<button data-go="assistant"><i>✨</i><b>المساعد الذكي</b><small>اسأل أي سؤال</small></button>
+<button data-go="community"><i>👥</i><b>مجتمع الطلاب</b><small>تواصل مع زملائك</small></button>
+<button data-go="teacher"><i>🎓</i><b>لوحة الأستاذ</b><small>أدوات تعليمية</small></button>
+</div>
+<div class="columns"><div class="panel"><div class="panel-head"><h3>تقدّمك في الرحلة</h3><small>هدفك: التفوق الدراسي</small></div><strong id="dashGradeLabel">الصف الثاني الثانوي</strong><div class="progress"><span id="progressBar"></span></div><small class="muted">أنت على الطريق الصحيح — استمر كل يوم ولو بخطوة صغيرة.</small><div class="panel-head" style="margin-top:24px"><h3>أحدث التحديات</h3><button class="secondary" data-go="challenges">عرض الكل</button></div><div class="course-list" id="homeChallenges"></div></div>
+<div class="panel"><div class="panel-head"><h3>مهام اليوم</h3><small>خطوة صغيرة تصنع فرقًا</small></div><form id="newTaskForm" style="display:flex;gap:8px;margin-bottom:12px"><input id="newTaskInput" placeholder="أضف مهمة مذاكرة جديدة..." style="flex:1;padding:9px 12px;border:1px solid var(--line);border-radius:10px;font-size:12px" required maxlength="100"><button class="primary" type="submit" style="padding:9px 14px;border-radius:10px;font-size:12px">+ إضافة</button></form><div class="task-list" id="tasks"></div><p class="muted" style="font-size:12px;margin-top:10px">علّم على المهمة بعد إنجازها لكسب النقاط.</p></div></div>
+<div class="panel pomodoro-panel" id="pomodoroPanel" style="margin-top:16px;"><div class="panel-head"><h3>⏱️ مؤقت التركيز والمذاكرة (بومودورو)</h3><span class="tag" id="pomoModeTag">جلسة تركيز (25 د)</span></div><div style="display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;padding:12px 0;"><div style="font-size:46px;font-weight:900;font-variant-numeric:tabular-nums;color:var(--blue);letter-spacing:2px;" id="pomoTime">25:00</div><div style="display:flex;gap:8px;align-items:center;"><button class="primary" id="pomoStartBtn" style="padding:10px 18px;font-size:13px;">▶ بدء التركيز</button><button class="secondary" id="pomoResetBtn" style="padding:10px 14px;font-size:13px;">↺ إعادة ضبط</button><button class="icon-btn" id="pomoModeSwitch" title="تبديل الجلسة / الاستراحة" style="padding:10px 12px;font-size:13px;">☕ استراحة</button></div></div><p class="muted" style="font-size:12px;margin:4px 0 0;text-align:center;">💡 قسّم وقتك: 25 دقيقة مذاكرة مركزة تليها 5 دقائق استراحة لتثبيت المعلومات.</p></div></section>
+<section class="view" id="view-challenges"><h2 class="section-title">التحديات 🏆</h2><p class="muted">اختر تحديًا وابدأ في جمع نقاط التفوق.</p><div class="filters" id="challengeFilters"><button class="active" data-filter="all">كل التحديات</button><button data-filter="math">الرياضيات</button><button data-filter="science">العلوم</button><button data-filter="language">اللغات</button></div><div class="challenge-grid" id="challengeGrid"></div></section>
+<section class="view" id="view-exams"><h2 class="section-title">الامتحانات والنتائج</h2><p class="muted">اختبر فهمك، واعرف نتيجتك فور الانتهاء.</p><div class="panel"><div class="panel-head"><h3>اختبارات متاحة</h3><span class="tag">تدريب</span></div><div class="course-list" id="examList"></div></div><div class="panel" style="margin-top:16px"><div class="panel-head"><h3>أنشئ امتحانًا بالذكاء الاصطناعي ✨</h3><span class="tag">AI</span></div><p class="muted">اختار المادة والدرس، وقِمّة تنشئ أسئلة جديدة وتصححها وتحفظ نتيجتك.</p><form id="aiExamForm" class="form-grid"><div class="field"><label for="aiExamSubject">المادة</label><select id="aiExamSubject" required><option value="math">الرياضيات</option><option value="science">العلوم</option><option value="arabic">اللغة العربية</option><option value="english">اللغة الإنجليزية</option></select></div><div class="field"><label for="aiExamLesson">اسم الدرس أو الوحدة</label><input id="aiExamLesson" maxlength="160" required placeholder="مثال: قوانين نيوتن"/></div><div class="field"><label for="aiExamCount">عدد الأسئلة</label><select id="aiExamCount"><option value="5">5 أسئلة</option><option value="10" selected>10 أسئلة</option><option value="15">15 سؤالًا</option><option value="20">20 سؤالًا</option></select></div><div class="field"><label for="aiExamDifficulty">الصعوبة</label><select id="aiExamDifficulty"><option value="easy">سهل</option><option value="medium" selected>متوسط</option><option value="hard">صعب</option></select></div><div class="field full"><button class="primary" id="aiExamGenerate" type="submit">✨ إنشاء الامتحان</button></div></form><div id="aiExamStatus" class="muted" aria-live="polite"></div></div><div class="panel" style="margin-top:16px"><h3>نتائجك الأخيرة</h3><div id="results"><p class="muted">لم تُجرِ أي اختبار بعد. ابدأ اختبارًا لتظهر نتيجتك هنا.</p></div></div></section>
+<section class="view" id="view-library">
+<h2 class="section-title">مكتبة الكتب الإلكترونية 📚</h2>
+<p class="muted">اختار مرحلتك وصفك ومادتك، واعرض كتب الوزارة والسلاسل الخارجية ومصادرها.</p>
+<div class="panel library-controls">
+ <div class="library-controls-grid">
+  <div class="field"><label for="libraryStage">المرحلة التعليمية</label><select id="libraryStage"><option value="primary">المرحلة الابتدائية</option><option value="prep">المرحلة الإعدادية</option><option value="secondary">المرحلة الثانوية</option><option value="university">المرحلة الجامعية</option></select></div>
+  <div class="field"><label for="libraryGrade">الصف الدراسي</label><select id="libraryGrade"></select></div>
+  <div class="field"><label for="libraryTerm">الفصل الدراسي</label><select id="libraryTerm"><option value="all">الترمان</option><option value="1">الترم الأول</option><option value="2">الترم الثاني</option></select></div><div class="field"><label for="libraryType">نوع الملف</label><select id="libraryType"><option value="all">الكل</option><option value="book">كتب المنهج</option><option value="exam">امتحانات ونماذج</option><option value="answer_key">نماذج الإجابة</option></select></div>
+  <div class="field"><label for="librarySubject">المادة</label><select id="librarySubject"><option value="all">كل المواد</option><option>اللغة العربية</option><option>اللغة الإنجليزية</option><option>الرياضيات</option><option>الرياضيات التطبيقية</option><option>العلوم</option><option>الدراسات الاجتماعية</option><option>الفيزياء</option><option>الكيمياء</option><option>الأحياء</option><option>التاريخ</option><option>الجغرافيا</option><option>الفلسفة والمنطق</option><option>اللغة الفرنسية</option><option>اللغة الألمانية</option><option>الحاسب الآلي</option><option>مواد جامعية</option></select></div>
+ </div>
+ <div class="field library-search"><label for="searchLibrary">ابحث عن كتاب أو سلسلة أو مادة</label><input id="searchLibrary" placeholder="مثال: نيوتن، الخبير، البرهان، الامتحان..." aria-label="بحث في المكتبة"></div>
+ <div class="library-actions"><span class="muted">ملفات PDF المتاحة تُقرأ داخل قِمّة، والمصادر الرسمية الخارجية موضحة بشكل منفصل.</span></div>
+</div>
+<div class="panel" style="margin-top:16px;padding:18px">
+ <div class="panel-head"><h3>مصادر المناهج الرسمية 📚</h3><small>العام الدراسي 2026/2027</small></div>
+ <p class="muted">روابط وزارة التربية والتعليم للوصول إلى الكتب والمناهج لجميع الصفوف، ومناهج البكالوريا، والمواد التعليمية الرقمية.</p>
+ <div class="feature-grid">
+  <a class="feature-card" href="https://studentbooks.moe.gov.eg/Books" target="_blank" rel="noopener noreferrer"><strong>📘 مكتبة الكتب المدرسية</strong><span>كتب الوزارة للابتدائي والإعدادي والثانوي</span></a>
+  <a class="feature-card" href="https://ellibrary.moe.gov.eg/EgyptianBaccalaureate/" target="_blank" rel="noopener noreferrer"><strong>🎓 مناهج البكالوريا المصرية</strong><span>المناهج والمواد الخاصة بنظام البكالوريا</span></a>
+  <a class="feature-card" href="https://moe.gov.eg/ar/elearningenterypage/e-learning" target="_blank" rel="noopener noreferrer"><strong>💻 بوابة التعليم الإلكتروني</strong><span>المواد التعليمية والمصادر الرقمية التابعة للوزارة</span></a>
+  <a class="feature-card" href="https://moe.gov.eg/ar/general-administration-of-computer/textbooks" target="_blank" rel="noopener noreferrer"><strong>📚 صفحة الكتب الرسمية</strong><span>صفحة الوزارة الخاصة بالكتب والمناهج الدراسية</span></a>
+ </div>
+</div>
+<div class="panel" style="margin-top:16px;padding:18px">
+ <div class="panel-head"><h3>مصادر الشرح والتعلّم المجانية 🎥</h3><small>مصادر خارجية</small></div>
+ <p class="muted">مصادر إضافية للمراجعة ومشاهدة الشروحات. قد تتطلب بعض المنصات تسجيل الدخول، وهي ليست ملفات PDF مضافة إلى مكتبة قِمّة.</p>
+ <div class="feature-grid">
+  <a class="feature-card" href="https://stream.moe.gov.eg/" target="_blank" rel="noopener noreferrer"><strong>📡 منصة البث المباشر</strong><span>حصص ومراجعات تعليمية من وزارة التربية والتعليم</span></a>
+  <a class="feature-card" href="https://www.hesas.eg/" target="_blank" rel="noopener noreferrer"><strong>🧑‍🏫 منصة حصص مصر</strong><span>محتوى تعليمي ومراجعات للطلاب</span></a>
+  <a class="feature-card" href="https://www.ekb.eg/ar/home" target="_blank" rel="noopener noreferrer"><strong>📚 بنك المعرفة المصري</strong><span>مكتبة رقمية ومصادر معرفية وتعليمية متنوعة</span></a>
+  <a class="feature-card" href="https://moe.gov.eg/ar/" target="_blank" rel="noopener noreferrer"><strong>🏫 منصات الوزارة التعليمية</strong><span>مدرستنا ومنصات الوزارة وروابط الخدمات التعليمية الرسمية</span></a>
+ </div>
+</div>
+<div class="library-subhead"><h3>ملفات PDF المتاحة داخل قِمّة</h3><span class="muted" id="libraryCount">جارٍ حساب الملفات…</span></div>
+<div class="feature-grid" id="libraryGrid"></div>
+<div class="book-reader" id="bookReader" hidden role="dialog" aria-modal="true" aria-label="قارئ الكتب PDF">
+ <div class="book-reader-head"><div><strong id="readerTitle">قراءة الكتاب</strong><small id="readerMeta"></small></div><button type="button" class="secondary" id="closeBookReader">إغلاق ✕</button></div>
+ <iframe id="bookPdfFrame" title="قارئ PDF داخل قمة" loading="lazy"></iframe>
+</div>
+<div class="panel library-note"><strong>مكتبة قِمّة الداخلية</strong><p>سيظهر ملف PDF داخل المنصة عند توفر نسخة رقمية مسموح بعرضها. لن نضع روابط متاجر أو نحول الطالب إلى مواقع أخرى. الكتب التي لم تتوفر ملفاتها بعد ستظل معلّمة بوضوح بأنها قيد الإضافة.</p></div>
+</section>
+<section class="view" id="view-teachers"><h2 class="section-title">المدرسين 🎓</h2><p class="muted">ابحث عن مدرسين وشروحات تعليمية في جميع المواد الدراسية.</p><div class="panel video-search-panel"><div class="panel-head"><h3>🎬 ابحث عن مدرس أو شرح</h3><small>جميع المواد الدراسية</small></div><p class="muted" style="font-size:12px;margin:0 0 12px">اكتب اسم المدرس أو المادة أو الدرس، مثل رياضيات أو فيزياء أو إنجليزي.</p><form id="videoSearchForm" class="video-search-form"><input id="videoQuery" type="search" placeholder="ابحث عن مدرس أو مادة أو درس..." aria-label="ابحث عن مدرس أو مادة أو درس" required maxlength="160"><button class="primary" id="videoSearchBtn" type="submit">ابحث عن مدرسين</button></form><div id="videoResults" class="video-results" aria-live="polite"><p class="empty-note">اكتب اسم المدرس أو الدرس واضغط على «ابحث عن مدرسين».</p></div></div></section>
+<section class="view" id="view-assistant"><h2 class="section-title">المساعد الذكي ✨</h2><p class="muted">اسأل عن درس أو اطلب شرحًا وحلًا وتلخيصًا وتدريبًا تفاعليًا.</p><div class="chatbox"><div class="chat-head"><div class="avatar">🤖</div><div><strong>مساعد قِمّة</strong><div class="muted" style="font-size:11px">رفيقك في رحلة التعلم</div></div></div><div class="form-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0"><div class="field full"><label for="chatAgent">اختار المساعد المتخصص</label><select id="chatAgent"><option value="smart-teacher">👨‍🏫 المعلم الذكي — شرح الدروس</option><option value="lesson-summarizer">📝 ملخص الدروس</option><option value="exam-builder">📋 منشئ الامتحانات</option><option value="study-planner">🗓️ مخطط المذاكرة</option><option value="problem-solver">🧮 حلّال المسائل</option><option value="language-coach">🌐 مدرب اللغات</option><option value="learning-researcher">🔎 باحث المصادر التعليمية</option><option value="academic-mentor">🎯 المرشد الأكاديمي</option></select></div><div class="field"><label for="chatSubject">المادة</label><select id="chatSubject"><option value="عام">عام</option><option>اللغة العربية</option><option>اللغة الإنجليزية</option><option>الرياضيات</option><option>الفيزياء</option><option>الكيمياء</option><option>الأحياء</option><option>التاريخ</option><option>الجغرافيا</option></select></div><div class="field"><label for="chatMode">نوع المساعدة</label><select id="chatMode"><option value="explain">شرح درس</option><option value="solve">حل سؤال</option><option value="summary">تلخيص</option><option value="mindmap">خريطة ذهنية</option><option value="quiz">تدريب سؤال بسؤال</option></select></div></div><div class="field" id="chatTrackWrap" hidden><label for="chatTrack">مسار البكالوريا</label><select id="chatTrack"><option value="">اختار المسار</option><option value="medicine">الطب وعلوم الحياة</option><option value="engineering">الهندسة وعلوم الحاسب</option><option value="business">الأعمال</option><option value="arts">الآداب والفنون</option></select></div><div class="chat-body" id="chatBody"><div class="bubble">أهلًا بك! 👋 أنا مساعد قِمّة الذكي. اختار المادة ونوع المساعدة، واكتب سؤالك.</div><div class="suggestions"><button type="button">اشرح لي درسًا</button><button type="button">لخّص الدرس ده</button><button type="button">اختبرني في الرياضيات</button></div></div><form class="chat-form" id="chatForm"><input id="chatInput" placeholder="اكتب سؤالك هنا..." autocomplete="off" required><button class="primary" id="chatSendBtn">إرسال</button></form></div></section>
+<section class="view" id="view-community"><h2 class="section-title">مجتمع الطلاب 👥</h2><p class="muted">شارك إنجازك وتبادل الأفكار مع زملائك.</p><div class="panel"><form id="postForm" class="field"><label for="postText">اكتب منشورًا جديدًا</label><textarea id="postText" placeholder="إيه اللي أنجزته في مذاكرتك النهارده؟" required></textarea><button class="primary" style="margin-top:9px">نشر المنشور</button></form><div id="posts"><p class="muted">جارٍ تحميل منشورات مجموعتك…</p></div></div></section>
+<section class="view" id="view-teacher"><h2 class="section-title">لوحة الأستاذ</h2><p class="muted">نظرة سريعة على أدوات إعداد المحتوى والأنشطة التعليمية.</p><div class="feature-grid"><article class="feature"><div class="big">📝</div><h3>إنشاء اختبار</h3><p>جهّز اختبارًا تدريبيًا قصيرًا لطلابك.</p><button class="primary" data-go="exams">إدارة الاختبارات</button></article><article class="feature"><div class="big">📚</div><h3>إضافة مادة</h3><p>استعرض مكتبة المواد والدروس المتاحة.</p><button class="secondary" data-go="library">فتح المكتبة</button></article><article class="feature"><div class="big">👥</div><h3>مجتمع الطلاب</h3><p>تابع المشاركات التعليمية والتفاعل.</p><button class="secondary" data-go="community">فتح المجتمع</button></article></div></section>
+<section class="view" id="view-settings"><h2 class="section-title">إعدادات الحساب ⚙️</h2><div class="panel"><form id="settingsForm" class="form-grid"><div class="field"><label for="fullName">الاسم</label><input id="fullName" value="أحمد محمد" required></div><div class="field"><label for="grade">الصف الدراسي</label><select id="grade" required><option value="">اختر صفك الدراسي</option><option>الصف الأول الابتدائي</option><option>الصف الثاني الابتدائي</option><option>الصف الثالث الابتدائي</option><option>الصف الرابع الابتدائي</option><option>الصف الخامس الابتدائي</option><option>الصف السادس الابتدائي</option><option>الصف الأول الإعدادي</option><option>الصف الثاني الإعدادي</option><option>الصف الثالث الإعدادي</option><option value="الصف الأول الثانوي">أولى بكالوريا</option><option>الصف الثاني الثانوي</option><option>الصف الثالث الثانوي</option><option>المرحلة الجامعية</option></select></div><div class="field" id="settingsSystemWrap" hidden><label for="studySystemSettings">نظام الثانوية</label><select id="studySystemSettings"><option value="">اختار النظام</option><option value="baccalaureate">البكالوريا المصرية</option><option value="general">الثانوية العامة</option></select></div><div class="field" id="settingsTrackWrap" hidden><label for="settingsTrack">مسار البكالوريا</label><select id="settingsTrack"><option value="">اختار المسار</option><option value="medicine">الطب وعلوم الحياة</option><option value="engineering">الهندسة وعلوم الحاسب</option><option value="business">الأعمال</option><option value="arts">الآداب والفنون</option></select></div></div><div class="field"><label for="email">البريد الإلكتروني</label><input id="email" type="email" value="ahmed@example.com"></div><div class="field"><label for="studyGoal">هدفك اليومي (بالدقائق)</label><input id="studyGoal" type="number" min="10" max="600" value="120"></div><div class="field full"><button class="primary">حفظ التغييرات</button></div></form></div>
+<div class="panel" style="margin-top:16px;"><div class="panel-head"><h3>🎓 تقرير الطالب وشهادة المستوى</h3><small>وثيقة إنجاز رقمية</small></div><p class="muted">يمكنك طباعة أو حفظ تقرير مستواك الأكاديمي الحالي وشهادة الإنجاز التقديرية مباشرة من المنصة.</p><button type="button" class="secondary" id="printReportBtn" style="padding:10px 18px;font-size:13px;display:inline-flex;align-items:center;gap:8px;"><span>🖨️</span> طباعة الشهادة وتقرير الإنجاز</button></div></section>
+<footer class="footer">قِمّة — معًا نحو مستقبل أفضل · نموذج أولي قابل للتطوير</footer></main></div><div class="toast" id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const $=s=>document.querySelector(s);const $$=s=>document.querySelectorAll(s);
+
+const titles={home:['مرحبًا أحمد 👋','استعد لتحقيق إنجاز جديد اليوم'],challenges:['التحديات 🏆','كل خطوة تقربك من هدفك'],exams:['الامتحانات والنتائج','تدرّب، قيّم مستواك، وتقدّم'],library:['مكتبة المذاكرة 📚','معرفتك هي أقوى أدواتك'], teachers:['المدرسين 🎓','مدرسون وشروحات لجميع المواد الدراسية'],assistant:['المساعد الذكي ✨','اسأل، افهم، وتعلّم'],community:['مجتمع الطلاب 👥','نتعلم معًا وننجح معًا'],teacher:['لوحة الأستاذ','أدوات تعليمية في مكان واحد'],settings:['إعدادات الحساب','حدّث بياناتك وتفضيلاتك']};
+const challenges=[{name:'تحدي الرياضيات',desc:'احصل على 120 نقطة',icon:'🧮',cat:'math',points:120},{name:'تحدي الفيزياء',desc:'احصل على 100 نقطة',icon:'⚛️',cat:'science',points:100},{name:'تحدي اللغة الإنجليزية',desc:'احصل على 150 نقطة',icon:'📖',cat:'language',points:150},{name:'تحدي الكيمياء',desc:'احصل على 110 نقطة',icon:'🧪',cat:'science',points:110},{name:'تحدي المراجعة اليومية',desc:'احصل على 80 نقطة',icon:'🎯',cat:'math',points:80},{name:'تحدي الكلمات الجديدة',desc:'احصل على 90 نقطة',icon:'🔤',cat:'language',points:90}];
+const subjects=[{name:'الرياضيات',desc:'تمارين ومراجعات في الرياضيات',icon:'🧮'},{name:'الفيزياء',desc:'افهم القوانين بالتدريب',icon:'⚛️'},{name:'الكيمياء',desc:'ملخصات وتجارب تعليمية',icon:'🧪'},{name:'اللغة العربية',desc:'نحو وبلاغة وقراءة',icon:'📚'},{name:'اللغة الإنجليزية',desc:'قواعد ومفردات وقراءة',icon:'🔤'},{name:'الأحياء',desc:'مفاهيم ورسوم توضيحية',icon:'🧬'}];
+let points=0,done=0,results=[];
+let statsStorageKey='qimmaStats_guest';
+async function loadStats(userId){points=0;done=0;updateStatsUI();if(!userId)return;try{const {data,error}=await supabaseClient.from('student_progress').select('points,completed_count').eq('user_id',userId).maybeSingle();if(error)throw error;points=Number(data?.points)||0;done=Number(data?.completed_count)||0;updateStatsUI()}catch(error){console.error('Qimma progress load failed:',error);toast('تعذر تحميل نقاطك المحفوظة. حاول تحديث الصفحة.')}}
+function updateStatsUI(){const pct=Math.min(100,Math.round((done/10)*100));$('#points').textContent=points.toLocaleString('en-US');$('#doneCount').textContent=done;$('#progressLabel').textContent=pct+'%';$('#heroProgress').textContent=pct+'%';$('#progressBar').style.width=pct+'%';const ring=$('.progress-ring');if(ring)ring.style.setProperty('--progress',pct+'%')}
+
+const profileKey='qimmaStudentProfile';
+
+const SUPABASE_URL='https://asfmnztojcdotxyqfpzd.supabase.co';
+const SUPABASE_KEY='sb_publishable_irqLABJB7q61DtwmEtdtcw_Ujcip94i';
+const rememberKey='qimmaRememberMe';
+const wasRemembered=localStorage.getItem(rememberKey)==='true';
+$('#rememberMe').checked=wasRemembered;
+const authStorage={
+ getItem(key){
+  const preferred=localStorage.getItem(rememberKey)==='true'?localStorage:sessionStorage;
+  const fallback=preferred===localStorage?sessionStorage:localStorage;
+  let value=preferred.getItem(key);
+  if(value===null){value=fallback.getItem(key);if(value!==null){preferred.setItem(key,value);fallback.removeItem(key)}}
+  return value;
+ },
+ setItem(key,value){
+  const preferred=localStorage.getItem(rememberKey)==='true'?localStorage:sessionStorage;
+  const fallback=preferred===localStorage?sessionStorage:localStorage;
+  preferred.setItem(key,value);fallback.removeItem(key);
+ },
+ removeItem(key){localStorage.removeItem(key);sessionStorage.removeItem(key)}
+};
+const supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY,{auth:{storage:authStorage,persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+let authMode='login', currentProfile=null;
+const gradeToDb={'المرحلة الجامعية':'university','الصف الأول الابتدائي':'primary1','الصف الثاني الابتدائي':'primary2','الصف الثالث الابتدائي':'primary3','الصف الرابع الابتدائي':'primary4','الصف الخامس الابتدائي':'primary5','الصف السادس الابتدائي':'primary6','الصف الأول الإعدادي':'prep1','الصف الثاني الإعدادي':'prep2','الصف الثالث الإعدادي':'prep3','الصف الأول الثانوي':'secondary1','الصف الثاني الثانوي':'secondary2','الصف الثالث الثانوي':'secondary3'};
+const gradeFromDb={'primary1':'الصف الأول الابتدائي','primary2':'الصف الثاني الابتدائي','primary3':'الصف الثالث الابتدائي','primary4':'الصف الرابع الابتدائي','primary5':'الصف الخامس الابتدائي','primary6':'الصف السادس الابتدائي','prep1':'الصف الأول الإعدادي','prep2':'الصف الثاني الإعدادي','prep3':'الصف الثالث الإعدادي','secondary1':'الصف الأول الثانوي','secondary2':'الصف الثاني الثانوي','secondary3':'الصف الثالث الثانوي','university':'المرحلة الجامعية'};
+function ageGroup(age){return age<=8?'6-8':age<=11?'9-11':age<=14?'12-14':age<=17?'15-17':'18+'}
+function setAuthMessage(msg){$('#authMessage').textContent=msg}
+const guestBanks={
+ 'exam-math':{title:'اختبار الرياضيات',questions:[
+  {id:'gm1',prompt:'ما ناتج 7 × 8؟',options:['54','56','64','48'],answer:1,explanation:'7 × 8 = 56.'},
+  {id:'gm2',prompt:'إذا كان 3س + 2 = 14، فما قيمة س؟',options:['3','5','4','6'],answer:2,explanation:'نطرح 2 ثم نقسم على 3، فتكون س = 4.'},
+  {id:'gm3',prompt:'ما مساحة مستطيل طوله 8 سم وعرضه 3 سم؟',options:['11 سم²','22 سم²','24 سم²','16 سم²'],answer:2,explanation:'المساحة = الطول × العرض = 24 سم².'},
+  {id:'gm4',prompt:'ما ناتج 1/2 + 1/4؟',options:['2/6','3/4','1/4','1'],answer:1,explanation:'نوحد المقامات: 2/4 + 1/4 = 3/4.'},
+  {id:'gm5',prompt:'مجموع قياسات زوايا المثلث الداخلية يساوي؟',options:['90°','180°','270°','360°'],answer:1,explanation:'مجموع زوايا أي مثلث 180 درجة.'}
+ ]},
+ default:{title:'اختبار تدريبي',questions:[
+  {id:'gd1',prompt:'ما الغاز الذي تمتصه النباتات أثناء البناء الضوئي؟',options:['الأكسجين','النيتروجين','ثاني أكسيد الكربون','الهيدروجين'],answer:2,explanation:'تمتص النباتات ثاني أكسيد الكربون.'},
+  {id:'gd2',prompt:'ما وحدة قياس القوة في النظام الدولي؟',options:['الجول','النيوتن','الواط','الأمبير'],answer:1,explanation:'تقاس القوة بوحدة النيوتن.'},
+  {id:'gd3',prompt:'في جملة «قرأ الطالبُ الدرسَ»، ما إعراب كلمة «الدرسَ»؟',options:['فاعل','مفعول به منصوب','مبتدأ','خبر'],answer:1,explanation:'الدرس مفعول به منصوب.'},
+  {id:'gd4',prompt:'أي جزء من الخلية يحتوي غالبًا على المادة الوراثية؟',options:['النواة','الغشاء','السيتوبلازم','الجدار الخلوي'],answer:0,explanation:'توجد المادة الوراثية في النواة.'},
+  {id:'gd5',prompt:'ما الصيغة الكيميائية للماء؟',options:['CO₂','O₂','H₂O','NaCl'],answer:2,explanation:'يتكون جزيء الماء من H₂O.'}
+ ]}
+};
+function showStudent(p){
+ currentProfile=p;
+ if(p.isGuest){
+  points=350;done=6;updateStatsUI();
+  $('#sideName').textContent=p.name;
+  $('#sideGrade').textContent='السن '+(p.age||'—')+' سنة | '+(p.grade||'');
+  $('#fullName').value=p.name||'';
+  $('#grade').value=p.grade||'';
+  $('#studySystemSettings').value='baccalaureate';
+  $('#settingsSystemWrap').style.display='block';
+  $('#settingsTrackWrap').hidden=false;
+  $('#settingsTrack').value='medicine';
+  $('#pageTitle').textContent='مرحبًا '+(p.name||'بك')+' (وضع المعاينة) 👋';
+  $('#loginScreen').style.display='none';
+  $('#appShell').classList.remove('locked');
+  const target=$('#results');
+  if(target){
+   target.innerHTML='<div class="course"><div class="course-icon">📝</div><div class="course-info"><strong>اختبار الرياضيات</strong><small>النتيجة: 100% — 5/5 إجابات صحيحة</small></div><span class="challenge-status">ممتاز</span></div><div class="course"><div class="course-icon">📝</div><div class="course-info"><strong>تحدي العلوم</strong><small>النتيجة: 80% — 4/5 إجابات صحيحة</small></div><span class="challenge-status">ممتاز</span></div>';
+  }
+  const postsTarget=$('#posts');
+  if(postsTarget){
+   postsTarget.innerHTML='<article class="community-post"><div class="post-user"><div class="avatar">👨🏻‍🎓</div><strong>أحمد علي (طالب قِمّة)</strong><small class="muted"> · منذ ساعتين</small></div><p>ما رأيكم في ملخص درس الديناميكا في المكتبة؟ ممتاز جداً وساعدني في مراجعة القوانين.</p></article><article class="community-post"><div class="post-user"><div class="avatar">👩🏻‍🎓</div><strong>سارة حسن</strong><small class="muted"> · منذ 5 ساعات</small></div><p>أنهيت تحدي الفيزياء اليوم وحصلت على 100 نقطة! بالتوفيق لجميع طلاب البكالوريا.</p></article>';
+  }
+  return;
+ }
+ loadStats(p.id);
+ loadStudentResults();
+ loadCommunityPosts();
+ $('#sideName').textContent=p.name;
+ $('#sideGrade').textContent='السن '+(p.age||'—')+' سنة | '+(p.grade||'');
+ $('#fullName').value=p.name||'';
+ $('#grade').value=p.grade||'';
+ $('#studySystemSettings').value=p.studySystem==='bac'?'baccalaureate':p.studySystem||'';
+ $('#settingsSystemWrap').style.display=p.grade==='الصف الثاني الثانوي'?'block':'none';
+ $('#settingsTrackWrap').hidden=!(p.grade==='الصف الثاني الثانوي'&&p.studySystem==='bac');
+ $('#settingsTrack').value=p.studyTrack||'';
+ $('#pageTitle').textContent='مرحبًا '+(p.name||'بك')+' 👋';
+ $('#loginScreen').style.display='none';
+ $('#appShell').classList.remove('locked');
+}
+async function loadCloudProfile(user){
+ const {data,error}=await supabaseClient.from('student_profiles').select('*').eq('user_id',user.id).maybeSingle();
+ if(error) throw error;
+ const meta=user.user_metadata||{};
+ const schoolGrade=data?.school_grade||meta.school_grade||gradeToDb[meta.grade_label]||null;const rawSystem=data?.school_system||meta.school_system||'';const studySystem=rawSystem==='baccalaureate'?'bac':rawSystem;const studyTrack=data?.school_track||meta.school_track||'';
+ if(!data){const validSystem=schoolGrade==='secondary2'?(studySystem==='general'||(studySystem==='bac'&&!!studyTrack)):!studySystem;const profilePayload={user_id:user.id,display_name:String(meta.display_name||user.email?.split('@')[0]||'طالب قِمّة').slice(0,40),age_group:ageGroup(Number(meta.age||16)),school_grade:schoolGrade,school_system:validSystem?studySystem||null:null,school_track:validSystem&&studySystem==='bac'?studyTrack:null,study_goal:meta.study_goal||null};if(validSystem){const {error:insertError}=await supabaseClient.from('student_profiles').insert(profilePayload);if(insertError&&insertError.code!=='23505')console.warn('Qimma profile seed deferred:',insertError.message)}}
+ const p={id:user.id,name:data?.display_name||meta.display_name||user.email?.split('@')[0]||'طالب قِمّة',email:user.email,phone:meta.phone||'',age:Number(meta.age||16),grade:gradeFromDb[schoolGrade]||meta.grade_label||'غير ذلك',schoolGrade,studySystem,studyTrack,studyGoal:data?.study_goal||meta.study_goal||''};
+ // Existing profiles are not rewritten on login; missing profiles are seeded from validated metadata.
+ try{localStorage.setItem(profileKey,JSON.stringify(p))}catch{}
+ showStudent(p);
+}
+async function handleAuthState(session){
+ if(!session){currentProfile=null;$('#appShell').classList.add('locked');$('#loginScreen').style.display='grid';return}
+ try{await loadCloudProfile(session.user)}catch(err){console.error('Qimma profile load failed:',err);setAuthMessage('تم تسجيل الدخول، لكن تعذر تحميل ملف الطالب: '+(err.message||err.code||'خطأ غير معروف'));}
+}
+function updateAuthMode(mode){authMode=mode;const login=mode==='login';$('#authOptions').hidden=!login;$('#authSwitchText').textContent=login?'ليس لديك حساب؟':'لديك حساب بالفعل؟';$('#registerMode').textContent=login?'إنشاء حساب':'تسجيل دخول';$('#registerMode').setAttribute('href',login?'#create-account':'#login');$('#authHeading').textContent=login?'تسجيل الدخول إلى قِمّة':'إنشاء حساب في قِمّة';$('#authIntro').textContent=login?'ادخل ببريدك الإلكتروني وكلمة السر.':'أنشئ حسابك وسيصلك رابط تأكيد على بريدك الإلكتروني.';$('#authFootnote').hidden=login;$('#authSubmit').textContent=login?'تسجيل الدخول':'إنشاء الحساب';$('#nameField').hidden=login;$('#phoneField').hidden=login;$('#ageField').hidden=login;$('#gradeField').hidden=login;$('#loginName').required=!login;$('#loginPhone').required=!login;$('#loginAge').required=!login;$('#loginGrade').required=!login;$('#nameField').style.display=login?'none':'block';$('#phoneField').style.display=login?'none':'block';$('#ageField').style.display=login?'none':'block';$('#gradeField').style.display=login?'none':'block';$('#baccalaureateWrap').hidden=login||$('#loginGrade').value!=='الصف الثاني الثانوي';$('#studySystem').required=!login&&!$('#baccalaureateWrap').hidden;$('#registerTrackWrap').hidden=login||$('#loginGrade').value!=='الصف الثاني الثانوي'||$('#studySystem').value!=='baccalaureate';$('#loginTrack').required=!$('#registerTrackWrap').hidden;$('#loginPassword').autocomplete=login?'current-password':'new-password';setAuthMessage('');}
+document.addEventListener('click',e=>{const register=e.target.closest('#registerMode');if(register){e.preventDefault();updateAuthMode(authMode==='login'?'register':'login');$('#loginScreen').scrollTop=0;}});
+function updateStudySystem(){const show=$('#loginGrade').value==='الصف الثاني الثانوي';$('#baccalaureateWrap').hidden=!show;$('#studySystem').required=show;if(!show)$('#studySystem').value='';const trackNeeded=show&&$('#studySystem').value==='baccalaureate';$('#registerTrackWrap').hidden=!trackNeeded;$('#loginTrack').required=trackNeeded;if(!trackNeeded)$('#loginTrack').value='';}
+$('#loginGrade').addEventListener('change',updateStudySystem);$('#studySystem').addEventListener('change',updateStudySystem);updateAuthMode('login');
+$('#guestBtn').onclick=()=>{
+ const guestUser={
+  id:'guest_demo_user',
+  name:'طالب زائر',
+  email:'guest@qimma.edu',
+  phone:'01012345678',
+  age:16,
+  grade:'الصف الثاني الثانوي',
+  schoolGrade:'secondary2',
+  studySystem:'bac',
+  studyTrack:'medicine',
+  studyGoal:'120',
+  isGuest:true
+ };
+ showStudent(guestUser);
+ toast('مرحبًا بك في منصة قِمّة! أنت الآن في وضع المعاينة.');
+};
+$('#togglePassword').onclick=()=>{const p=$('#loginPassword');p.type=p.type==='password'?'text':'password';$('#togglePassword').textContent=p.type==='password'?'◉':'◎'};
+$('#forgotPassword').onclick=async()=>{const email=$('#loginEmail').value.trim().toLowerCase();if(!email){setAuthMessage('اكتب بريدك الإلكتروني أولًا لإرسال رابط استعادة كلمة السر.');return}const {error}=await supabaseClient.auth.resetPasswordForEmail(email,{redirectTo:location.origin+location.pathname});setAuthMessage(error?'تعذر إرسال رابط الاستعادة: '+error.message:'لو البريد مسجل، هيوصلك رابط استعادة كلمة السر.');};
+document.querySelector('#loginForm').addEventListener('submit',async function(e){
+ e.preventDefault();const email=$('#loginEmail').value.trim().toLowerCase(),password=$('#loginPassword').value;$('#authSubmit').disabled=true;setAuthMessage(authMode==='register'?'جارٍ إنشاء الحساب وإرسال رسالة التأكيد…':'جارٍ تسجيل الدخول…');
+ try{
+  if(authMode==='register'){
+   const name=$('#loginName').value.trim(),phone=$('#loginPhone').value.replace(/[\s()-]/g,''),age=Number($('#loginAge').value),grade=$('#loginGrade').value,system=$('#studySystem').value,track=$('#loginTrack').value;
+   const validEgyptianPhone=/^(?:\+20|0020|0)?1[0125][0-9]{8}$/.test(phone);
+   if(!name||!validEgyptianPhone||age<5||age>100||!gradeToDb[grade]||password.length<8||(grade==='الصف الثاني الثانوي'&&!system)||(grade==='الصف الثاني الثانوي'&&system==='baccalaureate'&&!track)){setAuthMessage('راجع البيانات: اكتب رقم هاتف مصري صحيحًا، وكلمة السر 8 أحرف على الأقل.');return}
+   const {data,error}=await supabaseClient.auth.signUp({email,password,options:{emailRedirectTo:location.origin+location.pathname,data:{display_name:name,phone,age,grade_label:grade,school_grade:gradeToDb[grade]||null,school_system:grade==='الصف الثاني الثانوي'?(system==='baccalaureate'?'bac':system||null):null,school_track:grade==='الصف الثاني الثانوي'&&system==='baccalaureate'?track:null}}});
+   if(error) throw error;
+   if(data.session) await supabaseClient.auth.signOut();
+   updateAuthMode('login');
+   setAuthMessage(data.session
+    ? 'تم إنشاء حسابك بنجاح. سجّل الدخول الآن باستخدام بريدك وكلمة السر.'
+    : 'تم إنشاء الحساب. أرسلنا رسالة تأكيد إلى '+email+'؛ افتح الرسالة واضغط رابط التأكيد، ثم سجّل الدخول من هنا. افحص مجلد الرسائل غير المرغوب فيها إذا لم تجدها.');
+  }else{
+   localStorage.setItem(rememberKey,$('#rememberMe').checked?'true':'false');const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});if(error){if(/Email not confirmed/i.test(error.message))throw new Error('لازم تؤكد بريدك من الرسالة اللي وصلتك قبل تسجيل الدخول.');throw error;}await loadCloudProfile(data.user);
+  }
+ }catch(err){setAuthMessage(err.message||'حدث خطأ، حاول مرة أخرى.');}
+ finally{$('#authSubmit').disabled=false;}
+});
+supabaseClient.auth.onAuthStateChange((event,session)=>{if(event==='SIGNED_IN'&&session&&authMode!=='register'){setTimeout(()=>handleAuthState(session),0)}});
+(async()=>{const {data,error}=await supabaseClient.auth.getSession();if(error){setAuthMessage('تعذر استعادة الجلسة.');return}if(data.session)await handleAuthState(data.session);else{$('#appShell').classList.add('locked');$('#loginScreen').style.display='grid';}})();
+
+
+function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400)}
+function go(view){if(!titles[view])return;$$('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+view));$$('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===view));$('#pageTitle').textContent=titles[view][0];$('#pageSubtitle').textContent=titles[view][1];$('#sidebar').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'})}
+$('#nav').addEventListener('click',e=>{const toggle=e.target.closest('#moreNavToggle');const menu=$('#moreNavItems');const more=$('#moreNavToggle');if(toggle){e.preventDefault();const open=menu.classList.toggle('open');more.setAttribute('aria-expanded',String(open));return}const b=e.target.closest('[data-view]');if(b){menu.classList.remove('open');more.setAttribute('aria-expanded','false');go(b.dataset.view)}});
+
+
+document.addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b)go(b.dataset.go)});
+$('#menuBtn').onclick=()=>$('#sidebar').classList.toggle('open');$('#profileBtn').onclick=()=>go('settings');$('#continueBtn').onclick=()=>go('library');$('#logout').onclick=async()=>{if(currentProfile?.isGuest){currentProfile=null;try{localStorage.removeItem('qimmaStudentProfile')}catch{}$('#appShell').classList.add('locked');$('#loginScreen').style.display='grid';$('#loginForm').reset();updateAuthMode('login');toast('تم تسجيل الخروج من وضع المعاينة.');return}const {error}=await supabaseClient.auth.signOut();if(error){toast('تعذر تسجيل الخروج: '+error.message);return}try{localStorage.removeItem('qimmaStudentProfile')}catch{}$('#appShell').classList.add('locked');$('#loginScreen').style.display='grid';$('#loginForm').reset();updateAuthMode('login')};
+const challengeQuizIds=['challenge-math','challenge-physics','challenge-english','challenge-chemistry','challenge-daily','challenge-vocabulary'];
+function renderChallenges(filter='all'){const items=challenges.filter(c=>filter==='all'||c.cat===filter);$('#challengeGrid').innerHTML=items.map(c=>{const id=challengeQuizIds[challenges.indexOf(c)];return '<article class="challenge-card"><div class="challenge-icon">'+c.icon+'</div><div class="challenge-info"><h3>'+c.name+'</h3><p>5 أسئلة حقيقية · نقاط حسب إجاباتك</p><span class="challenge-status">اختبار تدريبي</span></div><button class="primary start-challenge" data-quiz="'+id+'">ابدأ</button></article>'}).join('');}
+$('#challengeFilters').onclick=e=>{const b=e.target.closest('[data-filter]');if(!b)return;$('#challengeFilters button').forEach(x=>x.classList.toggle('active',x===b));renderChallenges(b.dataset.filter)};
+$('#homeChallenges').innerHTML=challenges.slice(0,3).map((c,i)=>'<div class="course"><div class="course-icon">'+c.icon+'</div><div class="course-info"><strong>'+c.name+'</strong><small>تدريب من 5 أسئلة</small></div><button class="primary" data-go="challenges">ابدأ</button></div>').join('');
+const examDefinitions=[{name:'الرياضيات',icon:'🧮',quiz:'exam-math'},{name:'العلوم',icon:'🔬',quiz:'exam-science'},{name:'اللغة العربية',icon:'📚',quiz:'exam-arabic'},{name:'اللغة الإنجليزية',icon:'🔤',quiz:'exam-english'}];
+$('#examList').innerHTML=examDefinitions.map(x=>'<div class="course"><div class="course-icon">'+x.icon+'</div><div class="course-info"><strong>اختبار '+x.name+'</strong><small>5 أسئلة · تصحيح فوري وحفظ النتيجة</small></div><button class="primary take-exam" data-quiz="'+x.quiz+'">ابدأ الاختبار</button></div>').join('');
+function makeNode(tag,cls,txt){const el=document.createElement(tag);if(cls)el.className=cls;if(txt!==undefined)el.textContent=txt;return el}
+async function startQimmaQuiz(quizId){
+ if(!currentProfile?.id){toast('سجّل الدخول أولًا لبدء الاختبار.');return}
+ if(currentProfile?.isGuest){
+  const quiz=guestBanks[quizId]||guestBanks.default;
+  const overlay=makeNode('div','qimma-quiz-overlay');overlay.style.cssText='position:fixed;inset:0;z-index:9999;background:rgba(10,18,35,.78);display:grid;place-items:center;padding:14px;overflow:auto';
+  const panel=makeNode('section','qimma-quiz-panel');panel.style.cssText='background:var(--panel,#fff);color:var(--text,#172033);width:min(720px,100%);max-height:92vh;overflow:auto;border-radius:18px;padding:20px;box-shadow:0 20px 70px #0005';
+  const heading=makeNode('div','qimma-quiz-heading');heading.style.cssText='display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px';
+  heading.append(makeNode('h2','',quiz.title+' (معاينة)'));
+  const close=makeNode('button','secondary','إغلاق');close.type='button';close.onclick=()=>overlay.remove();heading.append(close);panel.append(heading);
+  const form=makeNode('form','qimma-quiz-form');
+  quiz.questions.forEach((q,index)=>{const field=makeNode('fieldset','qimma-question');field.style.cssText='border:1px solid var(--border,#ddd);border-radius:12px;padding:12px;margin:12px 0';field.append(makeNode('legend','', (index+1)+'. '+q.prompt));q.options.forEach((option,choice)=>{const label=makeNode('label','qimma-option');label.style.cssText='display:flex;gap:9px;align-items:center;padding:8px;cursor:pointer';const input=document.createElement('input');input.type='radio';input.name=q.id;input.value=String(choice);input.required=true;label.append(input,document.createTextNode(option));field.append(label)});form.append(field)});
+  const submit=makeNode('button','primary','تسليم الاختبار');submit.type='submit';submit.style.cssText='width:100%;margin-top:10px';form.append(submit);panel.append(form);overlay.append(panel);document.body.append(overlay);
+  form.addEventListener('submit',e=>{
+   e.preventDefault();let correctCount=0;
+   quiz.questions.forEach(q=>{const sel=new FormData(form).get(q.id);if(Number(sel)===q.answer)correctCount++});
+   points += correctCount*10;done += 1;updateStatsUI();
+   panel.replaceChildren();const result=makeNode('div','qimma-quiz-result');result.style.cssText='text-align:center;padding:14px';
+   result.append(makeNode('h2','','أحسنت! انتهى الاختبار التجريبي 🎉'),makeNode('p','','درجتك: '+Math.round((correctCount/quiz.questions.length)*100)+'% ('+correctCount+' من '+quiz.questions.length+')'),makeNode('p','','النقاط المكتسبة: +'+(correctCount*10)),makeNode('p','','إجمالي نقاطك في المعاينة: '+points));
+   quiz.questions.forEach((q,i)=>{const line=makeNode('p','',(i+1)+'. الإجابة الصحيحة: '+q.options[q.answer]+' — '+q.explanation);line.style.cssText='text-align:right;border-top:1px solid var(--border,#ddd);padding-top:9px';result.append(line)});
+   const doneButton=makeNode('button','primary','تم');doneButton.onclick=()=>overlay.remove();result.append(doneButton);panel.append(result);
+  });
+  return;
+ }
+ const {data,error}=await supabaseClient.functions.invoke('qimma-assessments',{body:{action:'get_quiz',quiz_id:quizId}});
+ if(error||!data?.questions){toast(data?.error||error?.message||'تعذر تحميل الاختبار.');return}
+ const overlay=makeNode('div','qimma-quiz-overlay');overlay.style.cssText='position:fixed;inset:0;z-index:9999;background:rgba(10,18,35,.78);display:grid;place-items:center;padding:14px;overflow:auto';
+ const panel=makeNode('section','qimma-quiz-panel');panel.style.cssText='background:var(--panel,#fff);color:var(--text,#172033);width:min(720px,100%);max-height:92vh;overflow:auto;border-radius:18px;padding:20px;box-shadow:0 20px 70px #0005';
+ const heading=makeNode('div','qimma-quiz-heading');heading.style.cssText='display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px';
+ heading.append(makeNode('h2','',data.title||'اختبار قِمّة'));
+ const close=makeNode('button','secondary','إغلاق');close.type='button';close.onclick=()=>overlay.remove();heading.append(close);panel.append(heading);
+ const form=makeNode('form','qimma-quiz-form');
+ data.questions.forEach((q,index)=>{const field=makeNode('fieldset','qimma-question');field.style.cssText='border:1px solid var(--border,#ddd);border-radius:12px;padding:12px;margin:12px 0';field.append(makeNode('legend','', (index+1)+'. '+q.prompt));q.options.forEach((option,choice)=>{const label=makeNode('label','qimma-option');label.style.cssText='display:flex;gap:9px;align-items:center;padding:8px;cursor:pointer';const input=document.createElement('input');input.type='radio';input.name=q.id;input.value=String(choice);input.required=true;label.append(input,document.createTextNode(option));field.append(label)});form.append(field)});
+ const submit=makeNode('button','primary','تسليم الاختبار');submit.type='submit';submit.style.cssText='width:100%;margin-top:10px';form.append(submit);panel.append(form);overlay.append(panel);document.body.append(overlay);
+ form.addEventListener('submit',async event=>{event.preventDefault();if(!form.reportValidity())return;submit.disabled=true;submit.textContent='جارٍ التصحيح والحفظ…';try{const answers=data.questions.map(q=>{const selected=new FormData(form).get(q.id);return {id:q.id,choice:selected===null?null:Number(selected)}});if(answers.some(item=>!Number.isInteger(item.choice)||item.choice<0||item.choice>3)){toast('أجب عن كل الأسئلة قبل التسليم.');submit.disabled=false;submit.textContent='تسليم الاختبار';return}const saved=await supabaseClient.functions.invoke('qimma-assessments',{body:{action:'submit_quiz',quiz_id:quizId,answers}});
+ if(saved.error||!saved.data||saved.data.error){toast(saved.data?.error||saved.error?.message||'تعذر حفظ النتيجة.');submit.disabled=false;submit.textContent='إعادة المحاولة';return}
+ await loadStats(currentProfile.id);await loadStudentResults();panel.replaceChildren();const result=makeNode('div','qimma-quiz-result');result.style.cssText='text-align:center;padding:14px';result.append(makeNode('h2','', 'أحسنت! انتهى الاختبار 🎉'),makeNode('p','', 'درجتك: '+saved.data.score+'% ('+saved.data.correct_count+' من '+(saved.data.question_count||data.questions.length)+')'),makeNode('p','', 'النقاط المكتسبة: '+saved.data.points_awarded),makeNode('p','', 'إجمالي نقاطك: '+saved.data.total_points));saved.data.review.forEach((item,i)=>{const q=data.questions.find(x=>x.id===item.id);if(!q)return;const line=makeNode('p','', (i+1)+'. الإجابة الصحيحة: '+q.options[item.correct_choice]+' — '+item.explanation);line.style.cssText='text-align:right;border-top:1px solid var(--border,#ddd);padding-top:9px';result.append(line)});const doneButton=makeNode('button','primary','تم');doneButton.onclick=()=>overlay.remove();result.append(doneButton);panel.append(result)
+ }catch(error){console.error('Qimma assessment submission failed:',error);toast('حصلت مشكلة في الاتصال. إجاباتك ما زالت على الشاشة؛ حاول التسليم مرة أخرى.');submit.disabled=false;submit.textContent='إعادة المحاولة'}});
+}
+document.addEventListener('click',e=>{const b=e.target.closest('.start-challenge,.take-exam');if(b)startQimmaQuiz(b.dataset.quiz)});
+async function loadStudentResults(){const target=$('#results');if(!target||!currentProfile?.id)return;const {data,error}=await supabaseClient.from('student_challenge_attempts').select('id,subject,score,correct_count,question_count,created_at').eq('user_id',currentProfile.id).order('created_at',{ascending:false}).limit(10);if(error){console.error('Qimma results load failed:',error);target.textContent='تعذر تحميل النتائج المحفوظة.';return}target.replaceChildren();if(!data?.length){target.append(makeNode('p','muted','لم تُجرِ أي اختبار بعد. ابدأ اختبارًا لتظهر نتيجتك هنا.'));return}const labels={math:'الرياضيات',science:'العلوم',arabic:'اللغة العربية',english:'اللغة الإنجليزية'};data.forEach(item=>{const row=makeNode('div','course'),icon=makeNode('div','course-icon','📝'),info=makeNode('div','course-info'),name=makeNode('strong','',labels[item.subject]||item.subject),score=makeNode('small','', 'النتيجة: '+Math.round(item.score*100/((item.question_count||5)*10))+'% — '+item.correct_count+'/'+(item.question_count||5)+' إجابات صحيحة'),status=makeNode('span','challenge-status',item.score>=40?'ممتاز':'واصل التدريب');info.append(name,score);row.append(icon,info,status);target.append(row)})}
+function classPostFilter(){
+ const p=currentProfile,grade=p?.schoolGrade||gradeToDb[p?.grade]||'';
+ if(!p?.id||!grade||grade==='university')return null;
+ const system=grade==='secondary2'?(p.studySystem==='baccalaureate'?'bac':p.studySystem||null):null;
+ if(grade==='secondary2'&&(!system||!['bac','general'].includes(system)))return null;
+ const track=grade==='secondary2'&&system==='bac'?(p.studyTrack||null):null;
+ if(grade==='secondary2'&&system==='bac'&&!track)return null;
+ return {age_group:ageGroup(p.age),school_grade:grade,school_system:system,school_track:track};
+}
+async function loadCommunityPosts(){
+ const target=$('#posts');if(!target||!currentProfile?.id)return;const group=classPostFilter();target.replaceChildren();
+ if(!group){target.append(makeNode('p','muted','راجع الصف ونظام الثانوية ومسار البكالوريا في إعدادات الحساب للانضمام إلى مجموعتك.'));return}
+ let query=supabaseClient.from('student_posts').select('id,display_name,body,created_at').eq('age_group',group.age_group).eq('school_grade',group.school_grade).order('created_at',{ascending:false}).limit(30);
+ if(group.school_system===null)query=query.is('school_system',null).is('school_track',null);else{query=query.eq('school_system',group.school_system);if(group.school_track===null)query=query.is('school_track',null);else query=query.eq('school_track',group.school_track)}
+ const {data,error}=await query;if(error){console.error('Qimma community load failed:',error);target.append(makeNode('p','muted','تعذر تحميل منشورات مجموعتك الآن.'));return}
+ if(!data?.length){target.append(makeNode('p','muted','لسه مفيش منشورات في مجموعتك. ابدأ أول مشاركة!'));return}
+ data.forEach(post=>{const card=makeNode('article','community-post'),user=makeNode('div','post-user'),avatar=makeNode('div','avatar','👨🏻‍🎓'),name=makeNode('strong','',post.display_name),time=makeNode('small','muted',' · '+new Date(post.created_at).toLocaleString('ar-EG'));user.append(avatar,name,time);const body=makeNode('p','',post.body);card.append(user,body);target.append(card)})
+}
+$('#postForm').addEventListener('submit',async e=>{e.preventDefault();if(!currentProfile?.id){toast('سجّل الدخول أولًا.');return}
+if(currentProfile?.isGuest){
+ const input=$('#postText'),body=input.value.trim();
+ if(body.length<3){toast('اكتب مشاركتك أولًا.');return}
+ const target=$('#posts');
+ if(target){
+  const card=makeNode('article','community-post'),user=makeNode('div','post-user'),avatar=makeNode('div','avatar','👨🏻‍🎓'),name=makeNode('strong','',currentProfile.name+' (أنت)'),time=makeNode('small','muted',' · الآن');
+  user.append(avatar,name,time);const b=makeNode('p','',body);card.append(user,b);target.prepend(card);
+ }
+ input.value='';toast('تم نشر مشاركتك تجريبياً في المعاينة!');return;
+}
+const group=classPostFilter();if(!group){toast('راجع إعدادات الصف ونظام الثانوية ومسار البكالوريا أولًا.');return}if(group.school_grade==='secondary2'&&!group.school_system){toast('حدد نظام الثانوية من إعدادات الحساب.');return}if(group.school_grade==='secondary2'&&group.school_system==='bac'&&!group.school_track){toast('حدد مسار البكالوريا من إعدادات الحساب.');return}const input=$('#postText'),body=input.value.trim();if(body.length<3||body.length>1200){toast('المنشور يجب أن يكون بين 3 و1200 حرف.');return}const button=e.submitter||e.target.querySelector('button[type=submit],button');button.disabled=true;const payload={author_id:currentProfile.id,age_group:group.age_group,display_name:String(currentProfile.name||'طالب قِمّة').slice(0,40),body,school_grade:group.school_grade,school_system:group.school_system,school_track:group.school_track};const {error}=await supabaseClient.from('student_posts').insert(payload);button.disabled=false;if(error){console.error('Qimma post insert failed:',error);toast('تعذر نشر المشاركة. راجع الصف الدراسي وحاول مرة أخرى.');return}input.value='';await loadCommunityPosts();toast('تم نشر مشاركتك في مجموعة صفك.');});
+
+const libraryGrades={primary:['الصف الأول الابتدائي','الصف الثاني الابتدائي','الصف الثالث الابتدائي','الصف الرابع الابتدائي','الصف الخامس الابتدائي','الصف السادس الابتدائي'],prep:['الصف الأول الإعدادي','الصف الثاني الإعدادي','الصف الثالث الإعدادي'],secondary:['أولى بكالوريا','الصف الثاني الثانوي','الصف الثالث الثانوي'],university:['المرحلة الجامعية']};
+const externalSeries=[
+{name:'نيوتن',subjects:'الفيزياء والعلوم',icon:'⚛️',search:'نيوتن'},
+{name:'الخبير',subjects:'سلاسل ومراجع خارجية — تحقق من المادة والصف',icon:'🎓',search:'الخبير'},
+{name:'البرهان',subjects:'اللغة العربية ومواد أخرى حسب الإصدار',icon:'📘',search:'البرهان'},
+{name:'الامتحان',subjects:'سلاسل متعددة للمواد والمراحل',icon:'📝',search:'الامتحان'},
+{name:'المعاصر',subjects:'الرياضيات واللغات والعلوم',icon:'📐',search:'المعاصر'},
+{name:'الأضواء',subjects:'سلاسل متعددة للابتدائي والإعدادي والثانوي',icon:'💡',search:'الأضواء'},
+{name:'جيم',subjects:'اللغة الإنجليزية',icon:'🔤',search:'جيم'},
+{name:'سلاح التلميذ',subjects:'مواد ومراحل التعليم الأساسي',icon:'🛡️',search:'سلاح التلميذ'},
+{name:'الشاطر',subjects:'مواد ومراحل التعليم الأساسي',icon:'⭐',search:'الشاطر'},
+{name:'بت باي بت',subjects:'اللغة الإنجليزية',icon:'🔠',search:'بت باي بت'},
+{name:'مندليف',subjects:'الكيمياء',icon:'🧪',search:'مندليف'},
+{name:'الوافي',subjects:'الفيزياء ومواد علمية',icon:'📗',search:'الوافي'},
+{name:'كيان',subjects:'اللغة العربية ومواد أخرى حسب الإصدار',icon:'📚',search:'كيان'},
+{name:'التفوق',subjects:'العلوم والمواد العلمية',icon:'🏆',search:'التفوق'}
+];
+function libraryCurrentGrade(){const p=currentProfile?.grade||$('#grade')?.value||'';return p}
+function fillLibraryGrades(){const stage=$('#libraryStage').value,select=$('#libraryGrade'),grades=libraryGrades[stage]||[];select.innerHTML=grades.map(g=>'<option value="'+g+'">'+g+'</option>').join('');const current=libraryCurrentGrade()==='الصف الأول الثانوي'?'أولى بكالوريا':libraryCurrentGrade();if(grades.includes(current))select.value=current;}
+let qimmaLibraryBooks=[];
+function initLibrary(){const p=libraryCurrentGrade();const stage=p.includes('الابتدائي')?'primary':p.includes('الإعدادي')?'prep':p.includes('الثانوي')?'secondary':p.includes('الجامعية')?'university':'secondary';$('#libraryStage').value=stage;fillLibraryGrades();$('#libraryStage').addEventListener('change',()=>{fillLibraryGrades();renderLibrary()});['libraryGrade','libraryTerm','librarySubject','libraryType'].forEach(id=>$('#'+id).addEventListener('change',()=>renderLibrary()));$('#searchLibrary').addEventListener('input',e=>renderLibrary(e.target.value.trim()));$('#closeBookReader').addEventListener('click',closeBookReader);$('#bookReader').addEventListener('click',e=>{if(e.target.id==='bookReader')closeBookReader()});loadLibraryBooks();}
+async function loadLibraryBooks(){
+ const grid=$('#libraryGrid');grid.innerHTML='<div class="book-empty">جارٍ تحميل فهرس الكتب…</div>';
+ const defaultBooks=[
+  {id:'bk1',title:'كتاب الرياضيات — الجبر والتفاضل وحساب المثلثات',stage:'secondary',grade:'الصف الثاني الثانوي',subject:'الرياضيات',term:'1',publisher:'وزارة التربية والتعليم',publication_year:'2024/2025',resource_type:'book',file_url:'https://moe.gov.eg/',license_note:'متاح وفق ترخيص وزارة التربية والتعليم.'},
+  {id:'bk2',title:'كتاب الفيزياء — الميكانيكا والكهرباء',stage:'secondary',grade:'الصف الثاني الثانوي',subject:'الفيزياء',term:'1',publisher:'وزارة التربية والتعليم',publication_year:'2024/2025',resource_type:'book',file_url:'https://moe.gov.eg/',license_note:'متاح وفق ترخيص وزارة التربية والتعليم.'},
+  {id:'bk3',title:'كتاب الكيمياء — الروابط والتفاعلات الكيميائية',stage:'secondary',grade:'الصف الثاني الثانوي',subject:'الكيمياء',term:'1',publisher:'وزارة التربية والتعليم',publication_year:'2024/2025',resource_type:'book',file_url:'https://moe.gov.eg/',license_note:'متاح وفق ترخيص وزارة التربية والتعليم.'},
+  {id:'bk4',title:'كتاب اللغة العربية — لغتي هويتي',stage:'secondary',grade:'الصف الثاني الثانوي',subject:'اللغة العربية',term:'1',publisher:'وزارة التربية والتعليم',publication_year:'2024/2025',resource_type:'book',file_url:'https://moe.gov.eg/',license_note:'متاح وفق ترخيص وزارة التربية والتعليم.'},
+  {id:'bk5',title:'كتاب اللغة الإنجليزية — New Hello! English for Egypt',stage:'secondary',grade:'الصف الثاني الثانوي',subject:'اللغة الإنجليزية',term:'1',publisher:'وزارة التربية والتعليم',publication_year:'2024/2025',resource_type:'book',file_url:'https://moe.gov.eg/',license_note:'متاح وفق ترخيص وزارة التربية والتعليم.'},
+  {id:'bk6',title:'كتاب الأحياء — التركيب والوظيفة في الكائنات الحية',stage:'secondary',grade:'الصف الثاني الثانوي',subject:'الأحياء',term:'1',publisher:'وزارة التربية والتعليم',publication_year:'2024/2025',resource_type:'book',file_url:'https://moe.gov.eg/',license_note:'متاح وفق ترخيص وزارة التربية والتعليم.'}
+ ];
+ try{
+  const {data,error}=await supabaseClient.from('library_books').select('id,title,series,stage,grade,subject,term,publisher,publication_year,exam_year,resource_type,file_url,source_type,license_note').eq('is_published',true).order('title');
+  if(error)console.warn('Library load deferred to offline catalogue:',error.message);
+  qimmaLibraryBooks=(data&&data.length>0)?data:defaultBooks;
+ }catch(e){
+  qimmaLibraryBooks=defaultBooks;
+ }
+ renderLibrary();
+}
+function openBookReader(bookId){
+ const b=qimmaLibraryBooks.find(x=>x.id===bookId);if(!b)return;
+ let fileUrl;try{fileUrl=new URL(b.file_url)}catch{toast('رابط الملف غير صالح.');return}
+ const allowedHosts=new Set(['ellibrary.moe.gov.eg','elearnningcontent.blob.core.windows.net','moe.gov.eg','studentbooks.moe.gov.eg']);
+ if(fileUrl.protocol!=='https:'||!allowedHosts.has(fileUrl.hostname)){toast('مصدر الملف غير معتمد للعرض داخل قِمّة.');return}
+ $('#readerTitle').textContent=b.title;$('#readerMeta').textContent=[b.grade,b.subject,b.term==='1'?'الترم الأول':b.term==='2'?'الترم الثاني':'الترمان',b.publication_year,b.exam_year].filter(Boolean).join(' • ');
+ $('#bookPdfFrame').src=fileUrl.href;$('#bookReader').hidden=false;document.body.style.overflow='hidden';
+}
+function closeBookReader(){$('#bookReader').hidden=true;$('#bookPdfFrame').src='about:blank';document.body.style.overflow='';}
+function renderLibrary(q=''){const stage=$('#libraryStage')?.value||'secondary',grade=$('#libraryGrade')?.value||'الصف الأول الثانوي',term=$('#libraryTerm')?.value||'all',subject=$('#librarySubject')?.value||'all',query=(q||'').trim().toLocaleLowerCase('ar');const rows=qimmaLibraryBooks.filter(b=>(!b.stage||b.stage===stage)&&(!b.grade||b.grade===grade||(grade==='أولى بكالوريا'&&b.grade==='الصف الأول الثانوي'))&&(term==='all'||b.term==='all'||b.term===term)&&(subject==='all'||b.subject===subject)&&($('#libraryType').value==='all'||(b.resource_type||'book')===$('#libraryType').value)&&(!query||[b.title,b.series,b.subject,b.publisher,b.grade,b.publication_year].filter(Boolean).join(' ').toLocaleLowerCase('ar').includes(query)));const grid=$('#libraryGrid');const count=$('#libraryCount');if(count)count.textContent='المتاح الآن: '+qimmaLibraryBooks.length+' ملفات PDF رسمية';if(!rows.length){const hasAvailable=qimmaLibraryBooks.length>0;grid.innerHTML='<div class="book-empty"><strong>لسه مفيش ملفات PDF للصف والاختيارات دي.</strong><br>قِمّة فيها '+qimmaLibraryBooks.length+' ملفات منشورة حاليًا لصفوف ومواد مختلفة. '+(hasAvailable?'<br><button class="primary" type="button" id="showAvailableLibrary" style="margin-top:12px">اعرض كل الملفات المتاحة</button>':'')+'<br><a href="https://studentbooks.moe.gov.eg/" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:12px">افتح مكتبة الكتب الرسمية لوزارة التعليم ↗</a></div>';return}grid.innerHTML=rows.map(b=>'<article class="book-card"><div class="book-mark">📕</div><span class="book-status">'+(b.resource_type==='exam'?'امتحان '+(b.exam_year||b.publication_year||'') : b.resource_type==='answer_key'?'نموذج إجابة':'كتاب '+(b.publication_year||''))+'</span><h3>'+escapeLibraryText(b.title)+'</h3><p>'+escapeLibraryText(b.license_note||'ملف PDF متاح للقراءة داخل قِمّة.')+'</p><div class="book-meta">'+[b.grade,b.subject,b.term==='1'?'الترم الأول':b.term==='2'?'الترم الثاني':'الترمان',b.publisher].filter(Boolean).map(escapeLibraryText).join(' · ')+'</div><button class="book-open" type="button" data-open-book="'+b.id+'">📖 افتح PDF داخل قِمّة</button></article>').join('');}
+function escapeLibraryText(value){return String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
+document.addEventListener('click',e=>{const jump=e.target.closest('#showAvailableLibrary');if(jump){$('#libraryStage').value='all';fillLibraryGrades();$('#libraryGrade').value='all';$('#libraryTerm').value='all';$('#librarySubject').value='all';$('#libraryType').value='all';$('#searchLibrary').value='';renderLibrary();return}const b=e.target.closest('[data-open-book]');if(b)openBookReader(b.dataset.openBook)});
+function renderVideoResults(videos){
+ const root=$('#videoResults');root.replaceChildren();
+ if(!videos.length){const empty=document.createElement('p');empty.className='empty-note';empty.textContent='ملقيناش فيديوهات مناسبة. جرّب تكتب اسم الدرس بطريقة مختلفة.';root.append(empty);return}
+ const grid=document.createElement('div');grid.className='video-results-grid';
+ videos.forEach(video=>{
+  const card=document.createElement('article');card.className='video-result';
+  const title=document.createElement('h4');title.textContent=video.title;
+  const channel=document.createElement('p');channel.className='video-channel';channel.textContent=video.channelTitle||'قناة تعليمية';
+  const frame=document.createElement('div');frame.className='video-frame';
+  const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(video.videoId);iframe.title=video.title;iframe.loading='lazy';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';iframe.referrerPolicy='strict-origin-when-cross-origin';iframe.allowFullscreen=true;frame.append(iframe);
+  card.append(title,channel,frame);if(video.description){const desc=document.createElement('p');desc.textContent=video.description;card.append(desc)}grid.append(card);
+ });root.append(grid);
+}
+$('#videoSearchForm').addEventListener('submit',async e=>{
+ e.preventDefault();const query=$('#videoQuery').value.trim();if(query.length<2){toast('اكتب اسم المدرس أو المادة أو الدرس أولًا.');return}
+ const btn=$('#videoSearchBtn'),root=$('#videoResults');btn.disabled=true;btn.textContent='جاري البحث...';root.innerHTML='<div class="video-loading">بنبحث عن أفضل الشروحات على يوتيوب…</div>';
+ try{const {data,error}=await supabaseClient.functions.invoke('qimma-videos',{body:{query}});if(error)throw error;if(data?.error)throw new Error(data.error);renderVideoResults(Array.isArray(data?.videos)?data.videos:[])}
+ catch(err){
+  const msg=String(err?.message||'حدث خطأ أثناء البحث.');root.replaceChildren();
+  const box=document.createElement('div');box.className='video-error';
+  box.innerHTML='<p>'+(msg.includes('JWT')||msg.includes('401')?'سجّل الدخول إلى حسابك أولًا ثم أعد البحث.':escapeLibraryText(msg))+'</p><a href="https://www.youtube.com/results?search_query='+encodeURIComponent('مدرس شرح '+query)+'" target="_blank" rel="noopener noreferrer" class="primary" style="display:inline-block;margin-top:10px;text-decoration:none;padding:8px 14px;border-radius:10px;font-size:12px;color:#fff">📺 فتح شروحات "'+escapeLibraryText(query)+'" مباشرة على يوتيوب ↗</a>';
+  root.append(box);
+ }
+ finally{btn.disabled=false;btn.textContent='ابحث عن فيديوهات'}
+});
+document.addEventListener('click',e=>{const b=e.target.closest('.open-subject');if(!b)return;$('#videoQuery').value=b.dataset.subject+' شرح دروس';$('#videoSearchForm').scrollIntoView({behavior:'smooth',block:'center'});$('#videoQuery').focus();toast('اكتب اسم الدرس بالتحديد ثم اضغط ابحث عن فيديوهات.')});
+renderChallenges();initLibrary();
+
+$('#settingsForm').addEventListener('submit',async e=>{e.preventDefault();if(!currentProfile?.id){toast('سجّل الدخول أولًا.');return}
+if(currentProfile?.isGuest){
+ const name=$('#fullName').value.trim()||'طالب زائر',gradeLabel=$('#grade').value;
+ currentProfile.name=name;currentProfile.grade=gradeLabel;
+ $('#sideName').textContent=name;$('#pageTitle').textContent='مرحبًا '+name+' (وضع المعاينة) 👋';
+ toast('تم حفظ التعديلات محلياً في وضع المعاينة.');return;
+}
+const name=$('#fullName').value.trim(),gradeLabel=$('#grade').value,schoolGrade=gradeToDb[gradeLabel]||null,selectedSystem=$('#studySystemSettings').value,system=gradeLabel==='الصف الثاني الثانوي'?(selectedSystem==='baccalaureate'?'bac':selectedSystem||null):null,track=system==='bac'?$('#settingsTrack').value:null;if(!name||name.length>40){toast('الاسم يجب أن يكون بين حرف واحد و40 حرفًا.');return}if(!schoolGrade){toast('اختار صفًا دراسيًا مدعومًا لحفظ النتائج والامتحانات.');return}if(gradeLabel==='الصف الثاني الثانوي'&&!system){toast('حدد نظام الثانوية.');return}if(system==='bac'&&!track){toast('حدد مسار البكالوريا.');return}const button=e.submitter||e.target.querySelector('button');button.disabled=true;const payload={user_id:currentProfile.id,display_name:name,age_group:ageGroup(currentProfile.age),school_grade:schoolGrade,school_system:system,school_track:track,study_goal:$('#studyGoal').value.trim()||null};const {error}=await supabaseClient.from('student_profiles').upsert(payload,{onConflict:'user_id'});if(error){button.disabled=false;toast('تعذر حفظ الإعدادات: '+error.message);return}await supabaseClient.auth.updateUser({data:{display_name:name,grade_label:gradeLabel,school_grade:schoolGrade,school_system:system,school_track:track,study_goal:payload.study_goal}});currentProfile={...currentProfile,name,grade:gradeLabel,schoolGrade,studySystem:system||'',studyTrack:track||'',studyGoal:payload.study_goal||''};$('#sideName').textContent=name;$('#pageTitle').textContent='مرحبًا '+name+' 👋';$('#settingsSystemWrap').style.display=gradeLabel==='الصف الثاني الثانوي'?'block':'none';$('#settingsTrackWrap').hidden=system!=='bac';button.disabled=false;await loadCommunityPosts();toast('تم حفظ إعداداتك بنجاح.');});
+$('#studySystemSettings').addEventListener('change',()=>{const show=$('#grade').value==='الصف الثاني الثانوي'&&$('#studySystemSettings').value==='baccalaureate';$('#settingsTrackWrap').hidden=!show;if(!show)$('#settingsTrack').value=''});
+$('#grade').addEventListener('change',()=>{const show=$('#grade').value==='الصف الثاني الثانوي';$('#settingsSystemWrap').hidden=!show;if(!show){$('#studySystemSettings').value='';$('#settingsTrack').value='';$('#settingsTrackWrap').hidden=true}});
+function addBubble(text,me=false){const el=document.createElement('div');el.className='bubble'+(me?' me':'');el.textContent=text;$('#chatBody').appendChild(el);$('#chatBody').scrollTop=$('#chatBody').scrollHeight;return el}
+const agentHistories={};
+const tutorGradeCodes={'الصف الأول الابتدائي':'primary1','الصف الثاني الابتدائي':'primary2','الصف الثالث الابتدائي':'primary3','الصف الرابع الابتدائي':'primary4','الصف الخامس الابتدائي':'primary5','الصف السادس الابتدائي':'primary6','الصف الأول الإعدادي':'prep1','الصف الثاني الإعدادي':'prep2','الصف الثالث الإعدادي':'prep3','الصف الأول الثانوي':'secondary1','الصف الثاني الثانوي':'secondary2','الصف الثالث الثانوي':'secondary3'};
+function syncTutorTrack(){const p=currentProfile,grade=$('#grade').value,system=$('#studySystemSettings').value||p?.studySystem;const needed=grade==='الصف الثاني الثانوي'&&(system==='baccalaureate'||system==='bac');$('#chatTrackWrap').hidden=!needed;if(needed&&p?.studyTrack)$('#chatTrack').value=p.studyTrack}
+$('#grade').addEventListener('change',syncTutorTrack);$('#studySystemSettings').addEventListener('change',syncTutorTrack);syncTutorTrack();
+$('#chatForm').onsubmit=async e=>{e.preventDefault();const input=$('#chatInput'),question=input.value.trim();if(!question)return;if(!currentProfile?.id){addBubble('سجّل الدخول أولًا عشان أقدر أساعدك.');return}
+if(currentProfile?.isGuest){
+ addBubble(question,true);input.value='';const send=$('#chatSendBtn');send.disabled=true;
+ const agentText=$('#chatAgent option:checked')?.textContent||'المساعد الذكي';
+ const loading=addBubble('المساعد المتخصص يجهز الرد التجريبي…');
+ setTimeout(()=>{
+  loading.remove();
+  addBubble('أهلاً بك يا بطل! 🌟 أنت الآن في "وضع المعاينة السريعة".\n\n📌 بخصوص سؤالك: "'+question+'"\nفي الوضع الكامل، يتولى نموذج Google Gemini والوكيل المتخصص ('+agentText+') شرح المفهوم وتلخيصه خطوة بخطوة باللغة العربية.\n\nيمكنك إنشاء حسابك المجاني في ثوانٍ للاستفادة الكاملة من الذكاء الاصطناعي!');
+  send.disabled=false;
+ },600);
+ return;
+}
+const profile=currentProfile,selectedGrade=$('#grade').value||profile.grade,grade=tutorGradeCodes[selectedGrade]||'',selectedSystem=$('#studySystemSettings').value||profile.studySystem,system=selectedSystem==='baccalaureate'?'bac':selectedSystem||'';if(selectedGrade==='الصف الثاني الثانوي'&&!['bac','general'].includes(system)){addBubble('افتح إعدادات الحساب وحدد نظام الثانوية الأول، وبعدها جرّب تاني.');return}const track=$('#chatTrack').value||profile.studyTrack||'';if(grade==='secondary2'&&system==='bac'&&!track){$('#chatTrackWrap').hidden=false;addBubble('اختار مسار البكالوريا عشان أظبط الشرح على منهجك.');return}const mode=$('#chatMode').value,subject=$('#chatSubject').value,agent=$('#chatAgent').value||'smart-teacher';addBubble(question,true);input.value='';const send=$('#chatSendBtn');send.disabled=true;send.textContent='جاري الإرسال…';const loading=addBubble('المساعد المتخصص يجهز الرد…');try{const history=(agentHistories[agent]||[]).slice(-6);const {data,error}=await supabaseClient.functions.invoke('qimma-agent-'+agent,{body:{mode,subject,question,history}});if(error)throw error;if(!data?.answer)throw new Error(data?.error||'المساعد لم يرجع إجابة واضحة.');loading.remove();addBubble(data.answer);agentHistories[agent]=[...history,{role:'user',content:question},{role:'assistant',content:data.answer}].slice(-6)}catch(err){loading.remove();let message=err?.message||'تعذر الاتصال بالمساعد الآن.';if(err?.context?.clone){try{const payload=await err.context.clone().json();if(payload?.error)message=payload.error}catch{}}addBubble('حصلت مشكلة: '+message)}finally{send.disabled=false;send.textContent='إرسال'}};
+$('#chatBody').addEventListener('click',e=>{const b=e.target.closest('.suggestions button');if(!b)return;const text=b.textContent;if(text.includes('رياضيات'))$('#chatSubject').value='الرياضيات';if(text.includes('لخّص'))$('#chatMode').value='summary';else if(text.includes('اختبر'))$('#chatMode').value='quiz';else $('#chatMode').value='explain';$('#chatInput').value=text;$('#chatForm').requestSubmit()});
+
+
+
+// AI-generated exams: answer keys remain server-side; the browser receives only questions/options.
+$('#aiExamForm').addEventListener('submit',async event=>{
+ event.preventDefault();if(!currentProfile?.id){toast('سجّل الدخول أولًا.');return}
+ if(currentProfile?.isGuest){
+  toast('مولّد الامتحانات بالذكاء الاصطناعي يتطلب حساباً مفعلاً. سجّل حسابك مجاناً لتجربته!');
+  return;
+ }
+ const lesson=$('#aiExamLesson').value.trim();if(lesson.length<2){toast('اكتب اسم الدرس.');return}
+ const button=$('#aiExamGenerate'),status=$('#aiExamStatus');button.disabled=true;button.textContent='جاري إنشاء الامتحان…';status.textContent='الذكاء الاصطناعي يجهز الأسئلة…';
+ try{
+  const {data,error}=await supabaseClient.functions.invoke('qimma-ai-exams',{body:{action:'generate',subject:$('#aiExamSubject').value,lesson,question_count:Number($('#aiExamCount').value),difficulty:$('#aiExamDifficulty').value}});
+  if(error||!data?.exam_id||!Array.isArray(data.questions))throw new Error(data?.error||error?.message||'تعذر إنشاء الامتحان.');
+  status.textContent='تم إنشاء الامتحان. أجب عن جميع الأسئلة ثم سلّم.';
+  const overlay=makeNode('div','qimma-quiz-overlay');overlay.style.cssText='position:fixed;inset:0;z-index:9999;background:rgba(10,18,35,.78);display:grid;place-items:center;padding:14px;overflow:auto';
+  const panel=makeNode('section','qimma-quiz-panel');panel.style.cssText='background:var(--panel,#fff);color:var(--text,#172033);width:min(760px,100%);max-height:92vh;overflow:auto;border-radius:18px;padding:20px;box-shadow:0 20px 70px #0005';
+  const heading=makeNode('div','qimma-quiz-heading');heading.style.cssText='display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px';heading.append(makeNode('h2','',data.title||'امتحان قِمّة'));
+  const close=makeNode('button','secondary','إغلاق');close.type='button';close.onclick=()=>overlay.remove();heading.append(close);panel.append(heading);
+  const form=makeNode('form','qimma-quiz-form');
+  data.questions.forEach((q,index)=>{const field=makeNode('fieldset','qimma-question');field.style.cssText='border:1px solid var(--border,#ddd);border-radius:12px;padding:12px;margin:12px 0';field.append(makeNode('legend','',(index+1)+'. '+q.prompt));q.options.forEach((option,choice)=>{const label=makeNode('label','qimma-option');label.style.cssText='display:flex;gap:9px;align-items:center;padding:8px;cursor:pointer';const input=document.createElement('input');input.type='radio';input.name=q.id;input.value=String(choice);input.required=true;label.append(input,document.createTextNode(option));field.append(label)});form.append(field)});
+  const submit=makeNode('button','primary','تسليم الامتحان');submit.type='submit';submit.style.cssText='width:100%;margin-top:10px';form.append(submit);panel.append(form);overlay.append(panel);document.body.append(overlay);
+  form.addEventListener('submit',async e=>{e.preventDefault();if(!form.reportValidity())return;submit.disabled=true;submit.textContent='جاري التصحيح والحفظ…';
+   try{const answers=data.questions.map(q=>({id:q.id,choice:Number(new FormData(form).get(q.id))}));if(answers.some(a=>!Number.isInteger(a.choice)||a.choice<0||a.choice>3))throw new Error('أجب عن كل الأسئلة.');
+    const saved=await supabaseClient.functions.invoke('qimma-ai-exams',{body:{action:'submit',exam_id:data.exam_id,answers}});
+    if(saved.error||!saved.data||saved.data.error)throw new Error(saved.data?.error||saved.error?.message||'تعذر حفظ النتيجة.');
+    await loadStats(currentProfile.id);await loadStudentResults();panel.replaceChildren();const result=makeNode('div','qimma-quiz-result');result.style.cssText='text-align:center;padding:14px';result.append(makeNode('h2','','أحسنت! انتهى الامتحان 🎉'),makeNode('p','','درجتك: '+saved.data.score+'% ('+saved.data.correct_count+' من '+saved.data.question_count+')'),makeNode('p','','النقاط المكتسبة: '+saved.data.points_awarded),makeNode('p','','إجمالي نقاطك: '+saved.data.total_points));
+    (saved.data.review||[]).forEach((item,i)=>{const q=data.questions.find(x=>x.id===item.id);if(!q)return;const line=makeNode('p','',(i+1)+'. الإجابة الصحيحة: '+q.options[item.correct_choice]+' — '+item.explanation);line.style.cssText='text-align:right;border-top:1px solid var(--border,#ddd);padding-top:9px';result.append(line)});const done=makeNode('button','primary','تم');done.onclick=()=>overlay.remove();result.append(done);panel.append(result)
+   }catch(err){toast(err?.message||'تعذر تسليم الامتحان.');submit.disabled=false;submit.textContent='إعادة المحاولة'}
+  });
+ }catch(err){status.textContent=err?.message||'تعذر إنشاء الامتحان.';toast(status.textContent)}
+ finally{button.disabled=false;button.textContent='✨ إنشاء الامتحان'}
+});
+
+// Theme Management
+const themeKey='qimma_theme';
+function initTheme(){
+ const saved=localStorage.getItem(themeKey)||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+ document.documentElement.setAttribute('data-theme',saved);
+ $('#themeToggleBtn').textContent=saved==='dark'?'☀️':'🌙';
+}
+$('#themeToggleBtn').onclick=()=>{
+ const cur=document.documentElement.getAttribute('data-theme')||'light',next=cur==='dark'?'light':'dark';
+ document.documentElement.setAttribute('data-theme',next);localStorage.setItem(themeKey,next);
+ $('#themeToggleBtn').textContent=next==='dark'?'☀️':'🌙';
+ toast(next==='dark'?'تم تفعيل الوضع الليلي 🌙':'تم تفعيل الوضع النهاري ☀️');
+};
+initTheme();
+
+// Web Audio Chimes
+function playChime(type='success'){
+ try{
+  const ctx=new (window.AudioContext||window.webkitAudioContext)();
+  const osc=ctx.createOscillator(),gain=ctx.createGain();
+  osc.connect(gain);gain.connect(ctx.destination);
+  if(type==='success'){
+   osc.frequency.setValueAtTime(587.33,ctx.currentTime);
+   osc.frequency.setValueAtTime(880,ctx.currentTime+0.15);
+   gain.gain.setValueAtTime(0.15,ctx.currentTime);
+   gain.gain.exponentialRampToValueAtTime(0.01,ctx.currentTime+0.5);
+   osc.start(ctx.currentTime);osc.stop(ctx.currentTime+0.5);
+  }else{
+   osc.frequency.setValueAtTime(440,ctx.currentTime);
+   gain.gain.setValueAtTime(0.12,ctx.currentTime);
+   gain.gain.exponentialRampToValueAtTime(0.01,ctx.currentTime+0.3);
+   osc.start(ctx.currentTime);osc.stop(ctx.currentTime+0.3);
+  }
+ }catch(e){}
+}
+
+// Pomodoro Focus Timer
+let pomoTimer=null,pomoSeconds=25*60,pomoIsRunning=false,pomoIsBreak=false;
+function updatePomoDisplay(){
+ const m=Math.floor(pomoSeconds/60),s=pomoSeconds%60;
+ $('#pomoTime').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+}
+$('#pomoStartBtn').onclick=()=>{
+ if(pomoIsRunning){
+  clearInterval(pomoTimer);pomoIsRunning=false;
+  $('#pomoStartBtn').textContent='▶ استئناف';$('#pomoStartBtn').className='primary';
+ }else{
+  pomoIsRunning=true;$('#pomoStartBtn').textContent='⏸ إيقاف مؤقت';$('#pomoStartBtn').className='secondary';
+  pomoTimer=setInterval(()=>{
+   if(pomoSeconds>0){
+    pomoSeconds--;updatePomoDisplay();
+   }else{
+    clearInterval(pomoTimer);pomoIsRunning=false;playChime('success');
+    if(!pomoIsBreak){
+     points+=25;done+=1;updateStatsUI();toast('🎉 مبروك! أكملت جلسة تركيز كاملة وكسبت +25 نقطة!');
+     pomoIsBreak=true;pomoSeconds=5*60;
+     $('#pomoModeTag').textContent='استراحة قصيرة (5 د)';
+     $('#pomoStartBtn').textContent='▶ بدء الاستراحة';$('#pomoStartBtn').className='primary';
+    }else{
+     toast('انتهت الاستراحة! حان وقت جلسة تركيز جديدة 🚀');
+     pomoIsBreak=false;pomoSeconds=25*60;
+     $('#pomoModeTag').textContent='جلسة تركيز (25 د)';
+     $('#pomoStartBtn').textContent='▶ بدء التركيز';$('#pomoStartBtn').className='primary';
+    }
+    updatePomoDisplay();
+   }
+  },1000);
+ }
+};
+$('#pomoResetBtn').onclick=()=>{
+ clearInterval(pomoTimer);pomoIsRunning=false;
+ pomoSeconds=pomoIsBreak?5*60:25*60;
+ $('#pomoStartBtn').textContent=pomoIsBreak?'▶ بدء الاستراحة':'▶ بدء التركيز';
+ $('#pomoStartBtn').className='primary';updatePomoDisplay();toast('تمت إعادة ضبط المؤقت.');
+};
+$('#pomoModeSwitch').onclick=()=>{
+ clearInterval(pomoTimer);pomoIsRunning=false;pomoIsBreak=!pomoIsBreak;
+ pomoSeconds=pomoIsBreak?5*60:25*60;
+ $('#pomoModeTag').textContent=pomoIsBreak?'استراحة قصيرة (5 د)':'جلسة تركيز (25 د)';
+ $('#pomoModeSwitch').textContent=pomoIsBreak?'📖 مذاكرة':'☕ استراحة';
+ $('#pomoStartBtn').textContent=pomoIsBreak?'▶ بدء الاستراحة':'▶ بدء التركيز';
+ $('#pomoStartBtn').className='primary';updatePomoDisplay();
+};
+updatePomoDisplay();
+
+// Dynamic Task Manager
+const tasksStorageKey='qimma_tasks_v2';
+let studentTasks=[];
+function loadTasks(){
+ try{
+  const saved=localStorage.getItem(tasksStorageKey);
+  studentTasks=saved?JSON.parse(saved):[
+   {id:'t1',text:'مراجعة المفاهيم الأساسية لدرس اليوم',done:false},
+   {id:'t2',text:'حل 10 أسئلة تدريبية في بنك الأسئلة',done:false},
+   {id:'t3',text:'قراءة ملخص الدرس من المكتبة الذكية',done:false},
+   {id:'t4',text:'اختبار تجريبي عبر المساعد الذكي',done:false}
+  ];
+ }catch(e){studentTasks=[];}
+ renderTasks();
+}
+function saveTasks(){try{localStorage.setItem(tasksStorageKey,JSON.stringify(studentTasks))}catch(e){}}
+function renderTasks(){
+ const target=$('#tasks');if(!target)return;target.innerHTML='';
+ if(!studentTasks.length){
+  target.innerHTML='<p class="muted" style="font-size:12px;text-align:center;padding:12px 0;">لا توجد مهام حالياً. أضف مهمتك الأولى بالأعلى! 👆</p>';
+  return;
+ }
+ studentTasks.forEach(item=>{
+  const row=makeNode('div','task');
+  row.style.cssText='display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 14px;';
+  const left=makeNode('label','');
+  left.style.cssText='display:flex;align-items:center;gap:10px;cursor:pointer;flex:1;';
+  const chk=document.createElement('input');chk.type='checkbox';chk.checked=!!item.done;
+  chk.onchange=()=>{
+   item.done=chk.checked;saveTasks();
+   if(item.done){playChime('success');points+=15;done+=1;toast('أحسنت! أنجزت مهمة وكسبت +15 نقطة 🎯');}
+   else{points=Math.max(0,points-15);done=Math.max(0,done-1);}
+   updateStatsUI();renderTasks();
+  };
+  const span=makeNode('span','',item.text);
+  if(item.done){span.style.textDecoration='line-through';span.style.opacity='0.55';}
+  left.append(chk,span);
+  const del=makeNode('button','','✕');del.type='button';
+  del.style.cssText='background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer;padding:4px 8px;border-radius:6px;';
+  del.title='حذف المهمة';
+  del.onclick=e=>{e.preventDefault();studentTasks=studentTasks.filter(x=>x.id!==item.id);saveTasks();renderTasks();toast('تم حذف المهمة.');};
+  row.append(left,del);target.append(row);
+ });
+ const completed=studentTasks.filter(x=>x.done).length;
+ const pct=studentTasks.length?Math.round((completed/studentTasks.length)*100):0;
+ $('#progressLabel').textContent=pct+'%';$('#progressBar').style.width=pct+'%';$('#heroProgress').textContent=pct+'%';
+}
+$('#newTaskForm').addEventListener('submit',e=>{
+ e.preventDefault();const inp=$('#newTaskInput'),txt=inp.value.trim();if(!txt)return;
+ studentTasks.unshift({id:'t_'+Date.now(),text:txt,done:false});
+ saveTasks();renderTasks();inp.value='';toast('تمت إضافة المهمة بنجاح.');
+});
+loadTasks();
+
+// Printable Certificate & Academic Progress Report
+$('#printReportBtn').onclick=()=>{
+ const p=currentProfile||{name:'طالب قِمّة',grade:'الصف الثاني الثانوي'};
+ const printWindow=window.open('','_blank');
+ if(!printWindow){toast('يرجى السماح بالنوافذ المنبثقة لطباعة الشهادة.');return;}
+ const html=`<!doctype html><html dir="rtl" lang="ar"><head><meta charset="utf-8"><title>شهادة إنجاز — قِمّة</title><style>
+ body{font-family:'Cairo',Tahoma,sans-serif;padding:40px;text-align:center;background:#fff;color:#102b4a}
+ .cert{border:8px double #102b4a;padding:34px 24px;border-radius:22px;max-width:700px;margin:auto;box-shadow:0 10px 40px rgba(0,0,0,0.06)}
+ h1{font-size:32px;color:#2468ed;margin-bottom:10px}
+ .score{font-size:20px;font-weight:bold;margin:24px 0;color:#102b4a;padding:14px;background:#f0f6ff;border-radius:12px}
+ .meta{font-size:13px;color:#74839b;margin-top:24px}
+ @media print{button{display:none}}
+ </style></head><body><div class="cert">
+ <h2>⛰️ منصة قِمّة للتعليم الذكي</h2>
+ <h1>شهادة تفوق وإنجاز دراسي</h1>
+ <p style="font-size:16px;">تشهد إدارة منصة قِمّة بأن الطالب المتميز:</p>
+ <h2 style="font-size:28px;color:#102b4a;margin:12px 0;">${escapeLibraryText(p.name)}</h2>
+ <p style="font-size:15px;">المقيد بالصف: <strong>${escapeLibraryText(p.grade)}</strong></p>
+ <div class="score">🏆 رصيد النقاط: <span>${points} نقطة</span> · التحديات المنجزة: <span>${done}</span></div>
+ <p style="color:#556b82;line-height:1.8;">تقديرًا لجهوده المستمرة وسعيه الدؤوب نحو التفوق وبناء مستقبله التعليمي المشرق.</p>
+ <div class="meta">تاريخ التوثيق: ${new Date().toLocaleDateString('ar-EG')} · منصة قِمّة التعليمية الذكية</div>
+ <button onclick="window.print()" style="margin-top:20px;padding:12px 24px;background:#2468ed;color:#fff;border:none;border-radius:12px;cursor:pointer;font-weight:bold;font-size:14px;">🖨️ طباعة الشهادة / حفظ PDF</button>
+ </div></body></html>`;
+ printWindow.document.write(html);printWindow.document.close();
+};
+
+// Service Worker for Offline Resilience
+if('serviceWorker' in navigator){
+ window.addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').catch(()=>{});});
+}
+</script></body>
+</html>

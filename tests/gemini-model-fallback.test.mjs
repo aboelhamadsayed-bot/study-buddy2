@@ -20,6 +20,13 @@ test("all Gemini-backed functions use the supported Flash-Lite fallback", () => 
       `${path} must use gemini-3.5-flash-lite when GEMINI_MODEL is unset`,
     );
     assert.doesNotMatch(source, /gemini-1\.5-flash/);
+    if (path.endsWith("_shared/qimma-agent-runtime.ts")) {
+      assert.match(
+        source,
+        /Access-Control-Allow-Headers[^\n]*x-client-info/,
+        `${path} must allow the Supabase browser client header during CORS preflight`,
+      );
+    }
   }
 });
 

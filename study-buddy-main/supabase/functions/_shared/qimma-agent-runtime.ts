@@ -38,7 +38,7 @@ export async function handleAgent(req:Request,agentId:string){
   if(await usage.json()!==true)return reply(429,{error:"وصلت للحد اليومي للمساعدين الذكيين. حاول غدًا."});
   const system="أنت "+role.name+" ضمن منصة قِمّة التعليمية المصرية. الدور المتخصص: "+role.instructions+" صف الطالب: "+gradeContext+". المادة: "+subject+". استخدم العربية الواضحة ما لم يطلب الطالب لغة أخرى. كن دقيقًا، لا تخترع معلومات أو مصادر، وصرّح عند نقص السياق. لا تطلب بيانات شخصية أو كلمات مرور.";
   const contents=[...(validHistory?history:[]).map((item:any)=>({role:item.role==="assistant"?"model":"user",parts:[{text:String(item.content||"")}]})),{role:"user",parts:[{text:question}]}];
-  const model=Deno.env.get("GEMINI_MODEL")||"gemini-1.5-flash";
+  const model=Deno.env.get("GEMINI_MODEL")||"gemini-3.5-flash-lite";
   const result=await fetch("https://generativelanguage.googleapis.com/v1beta/models/"+model+":generateContent?key="+encodeURIComponent(apiKey),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({systemInstruction:{parts:[{text:system}]},contents,generationConfig:{temperature:0.25,maxOutputTokens:2200}})});
   const data=await result.json().catch(()=>({}));
   if(!result.ok){console.error("Qimma agent provider error",agentId,result.status);return reply(502,{error:"المساعد مشغول حاليًا. حاول بعد قليل."});}
